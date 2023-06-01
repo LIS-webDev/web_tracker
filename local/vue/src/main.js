@@ -14,7 +14,10 @@ const router = createRouter({
         {
             name: 'HomeView',
             path: '/',
-            component: () => import("./components/Home/HomeView.vue")
+            component: () => import("./components/Home/HomeView.vue"),
+            props: {
+                userLogin: ""
+            }
         },
         {
         name: 'RegisterProfile',
@@ -32,7 +35,8 @@ const router = createRouter({
 
 const App = {
     data() {
-        return {}
+        return {
+        }
     },
     components: {
         AsideMenu : defineAsyncComponent({

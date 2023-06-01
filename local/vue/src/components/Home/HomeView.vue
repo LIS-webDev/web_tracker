@@ -2,12 +2,18 @@
 import {defineComponent} from 'vue'
 
 export default defineComponent({
-  name: "HomeView"
+  name: "HomeView",
+  props: {
+      userLogin: {
+        type: Object,
+        default: null,
+      }
+  }
 })
 </script>
 
 <template>
-  <div></div>
+  <div>Hello, {{userLogin}}</div>
 </template>
 
 <style scoped>

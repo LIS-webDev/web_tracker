@@ -27,27 +27,23 @@ export default defineComponent({
   name: "EditRegisterProfile",
   data() {
     return {
-      login: {
-        type: String,
-        default: '',
-        required: true
-      },
-      password: {
-        type: String,
-        default: '',
-        required: true
-      }
+      login: "",
+      password: ""
     }
   },
   methods: {
     register() {
       fetch('/api/user/register/', {
-
+        method: 'POST',
+        body: JSON.stringify({
+          login: this.login,
+          pass: this.password
+        })
       })
           .then(response => response.json())
           .then(data => {
             console.log(data);
-            // this.$router.push('/');
+            this.$router.push({name: 'HomeView', params: { userLogin: this.login}});
           });
     }
   }
