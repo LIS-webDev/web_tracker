@@ -1,5 +1,17 @@
+.app {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+}
+
 .main {
+  height: inherit;
   &__content {
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     padding-left: 210px;
   }
 }
@@ -7,8 +19,7 @@
   position: fixed;
   width: 210px;
   height: 100%;
-  top: 0;
-  left: 0;
+  top: 0;  left: 0;
   transform: translateX(-160px);
   transition: transform 0.3s linear;
   display: flex;
@@ -74,6 +85,21 @@
   height: 24px;
 }
 
+.aside__burger.close {
+  span {
+    transform: scaleY(0);
+  }
+  &::after {
+    bottom: 50%;
+    transform: translateY(50%) rotate(-45deg);
+  }
+
+  &::before {
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+  }
+}
+
 .aside__burger::after,
 .aside__burger::before {
   content: '';
@@ -92,13 +118,75 @@
 
 .aside__burger::after {
   bottom: 0;
+  transition: all 0.4s ease-in-out;
 }
 
 .aside__burger span {
   top: 50%;
   transform: translateY(-50%);
+  transition: transform 0.2s ease-in-out;
 }
 
 .aside__burger::before {
   top: 0;
+  transition: all 0.4s ease-in-out;
+}
+
+.register {
+  &__title {
+    margin-bottom: 40px;
+  }
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__input-row {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    label {
+      padding-right: 10px;
+    }
+  }
+
+  &__submit-btn {
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+.title {
+  font-size: 35px;
+  font-weight: 700;
+}
+
+.default-label {
+  font-size: 22px;
+}
+
+.default-input {
+  font-size: 22px;
+  padding: 0 5px;
+  background-color: transparent;
+  border-bottom: 1px solid #000;
+  &:focus {
+    box-shadow: 0px 7px 5px -4px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 0px 7px 5px -4px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 7px 5px -4px rgba(0,0,0,0.75);
+  }
+}
+
+.default-submit-btn {
+  font-size: 20px;
+  background-color: transparent;
+  border: 1px solid #6B78BC;
+  border-radius: 20px;
+  padding: 10px 20px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+  &:hover {
+    background-color: rgba(107, 120, 188, 0.5);
+    color: #fff;
+  }
 }
