@@ -3,3 +3,5 @@
 
 /local/vue/node_modules
 /local/vue/package-lock.json
+
+/local/vue/dist-dev
