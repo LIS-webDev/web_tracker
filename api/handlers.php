@@ -8,7 +8,7 @@ $Api->handlerGet("/api/test/", [
     'exceptionMessage' => 'Не получилось отправить запрос',//в случае ошибки в методе будет такой ответ всегда
 ]);
 
-$Api->handlerGet("/api/user/register/", [
+$Api->handlerPost("/api/user/register/", [
     'callback' => [ "\BitBalance\Api\Handler", "register" ],
     'needAuth' => false,
     'exceptionMessage' => 'Не получилось зарегистрироваться',

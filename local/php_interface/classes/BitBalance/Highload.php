@@ -46,4 +46,9 @@ class Highload {
         return $this->entity_data_class;
     }
 
+    public function add(array $data):void
+    {
+        $this->getEntityDataClass()::add($data);
+    }
+
 }

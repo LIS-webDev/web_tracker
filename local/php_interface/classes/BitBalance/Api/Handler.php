@@ -256,9 +256,17 @@ class Handler
     public static function register($urlParams = [], $body = []): array
     {
         $highloadTableUserId = 1;
-
         $hlbl = new Highload($highloadTableUserId);
-        return [$hlbl->higloadId];
+
+        $hashedPass = password_hash($body['pass'], PASSWORD_BCRYPT );
+
+        $data = [
+            "UF_LOGIN" => $body['login'],
+            "UF_PASSWORD" => $hashedPass,
+        ];
+
+        $hlbl->add($data);
+        return ['ok'];
     }
 
     public static function auth($urlParams = []): array
