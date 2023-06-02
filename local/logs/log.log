@@ -740,3 +740,261 @@ BitBalance\Highload Object
 )
 #end#
 ------------------------------------
+#start#---- 02.06.2023 10:50:01 ---  [1] ----
+Bitrix\Main\ORM\Data\AddResult Object
+(
+    [primary:protected] => Array
+        (
+            [ID] => 12
+        )
+
+    [wereErrorsChecked:protected] => 
+    [object:protected] => EO_User Object
+        (
+            [_entity:protected] => Bitrix\Main\ORM\Entity Object
+                (
+                    [className:protected] => \UserTable
+                    [module:protected] => 
+                    [name:protected] => User
+                    [connectionName:protected] => default
+                    [dbTableName:protected] => b_users
+                    [primary:protected] => Array
+                        (
+                            [0] => ID
+                        )
+
+                    [autoIncrement:protected] => ID
+                    [uf_id:protected] => 
+                    [isUts:protected] => 
+                    [isUtm:protected] => 
+                    [fields:protected] => Array
+                        (
+                            [ID] => Bitrix\Main\ORM\Fields\IntegerField Object
+                                (
+                                    [is_primary:protected] => 1
+                                    [is_unique:protected] => 
+                                    [is_required:protected] => 
+                                    [is_autocomplete:protected] => 1
+                                    [is_private:protected] => 
+                                    [is_nullable:protected] => 
+                                    [column_name:protected] => ID
+                                    [default_value:protected] => 
+                                    [name:protected] => ID
+                                    [dataType:protected] => 
+                                    [initialParameters:protected] => Array
+                                        (
+                                            [data_type] => integer
+                                            [primary] => 1
+                                            [autocomplete] => 1
+                                        )
+
+                                    [title:protected] => 
+                                    [validation:protected] => 
+                                    [validators:protected] => 
+                                    [additionalValidators:protected] => Array
+                                        (
+                                        )
+
+                                    [fetchDataModification:protected] => 
+                                    [fetchDataModifiers:protected] => 
+                                    [additionalFetchDataModifiers:protected] => Array
+                                        (
+                                        )
+
+                                    [saveDataModification:protected] => 
+                                    [saveDataModifiers:protected] => 
+                                    [additionalSaveDataModifiers:protected] => Array
+                                        (
+                                        )
+
+                                    [isSerialized:protected] => 
+                                    [parentField:protected] => 
+                                    [entity:protected] => Bitrix\Main\ORM\Entity Object
+ *RECURSION*
+                                )
+
+                            [UF_LOGIN] => Bitrix\Main\ORM\Fields\StringField Object
+                                (
+                                    [format:protected] => 
+                                    [size:protected] => 
+                                    [is_primary:protected] => 
+                                    [is_unique:protected] => 
+                                    [is_required:protected] => 1
+                                    [is_autocomplete:protected] => 
+                                    [is_private:protected] => 
+                                    [is_nullable:protected] => 1
+                                    [column_name:protected] => UF_LOGIN
+                                    [default_value:protected] => 
+                                    [name:protected] => UF_LOGIN
+                                    [dataType:protected] => 
+                                    [initialParameters:protected] => Array
+                                        (
+                                            [required] => 1
+                                        )
+
+                                    [title:protected] => 
+                                    [validation:protected] => 
+                                    [validators:protected] => 
+                                    [additionalValidators:protected] => Array
+                                        (
+                                        )
+
+                                    [fetchDataModification:protected] => 
+                                    [fetchDataModifiers:protected] => 
+                                    [additionalFetchDataModifiers:protected] => Array
+                                        (
+                                        )
+
+                                    [saveDataModification:protected] => 
+                                    [saveDataModifiers:protected] => Array
+                                        (
+                                        )
+
+                                    [additionalSaveDataModifiers:protected] => Array
+                                        (
+                                        )
+
+                                    [isSerialized:protected] => 
+                                    [parentField:protected] => 
+                                    [entity:protected] => Bitrix\Main\ORM\Entity Object
+ *RECURSION*
+                                )
+
+                            [UF_PASSWORD] => Bitrix\Main\ORM\Fields\StringField Object
+                                (
+                                    [format:protected] => 
+                                    [size:protected] => 
+                                    [is_primary:protected] => 
+                                    [is_unique:protected] => 
+                                    [is_required:protected] => 1
+                                    [is_autocomplete:protected] => 
+                                    [is_private:protected] => 
+                                    [is_nullable:protected] => 1
+                                    [column_name:protected] => UF_PASSWORD
+                                    [default_value:protected] => 
+                                    [name:protected] => UF_PASSWORD
+                                    [dataType:protected] => 
+                                    [initialParameters:protected] => Array
+                                        (
+                                            [required] => 1
+                                        )
+
+                                    [title:protected] => 
+                                    [validation:protected] => 
+                                    [validators:protected] => 
+                                    [additionalValidators:protected] => Array
+                                        (
+                                        )
+
+                                    [fetchDataModification:protected] => 
+                                    [fetchDataModifiers:protected] => 
+                                    [additionalFetchDataModifiers:protected] => Array
+                                        (
+                                        )
+
+                                    [saveDataModification:protected] => 
+                                    [saveDataModifiers:protected] => Array
+                                        (
+                                        )
+
+                                    [additionalSaveDataModifiers:protected] => Array
+                                        (
+                                        )
+
+                                    [isSerialized:protected] => 
+                                    [parentField:protected] => 
+                                    [entity:protected] => Bitrix\Main\ORM\Entity Object
+ *RECURSION*
+                                )
+
+                        )
+
+                    [fieldsMap:protected] => Array
+                        (
+                            [ID] => Array
+                                (
+                                    [data_type] => integer
+                                    [primary] => 1
+                                    [autocomplete] => 1
+                                )
+
+                        )
+
+                    [u_fields:protected] => 
+                    [code:protected] => 
+                    [references:protected] => Array
+                        (
+                        )
+
+                    [isClone:protected] => 
+                )
+
+            [_state:protected] => 0
+            [_actualValues:protected] => Array
+                (
+                    [ID] => 12
+                )
+
+            [_currentValues:protected] => Array
+                (
+                    [UF_LOGIN] => adminwwf
+                    [UF_PASSWORD] => $2y$10$8M2tPARqHnuX2GFd74d09eFAVh9uT8uU22oRTSRNhmeKkFtJaWTTe
+                )
+
+            [_runtimeValues:protected] => Array
+                (
+                )
+
+            [_customData:protected] => 
+            [_onPrimarySetListeners:protected] => Array
+                (
+                )
+
+            [_authContext:protected] => 
+            [_savingInProgress:protected] => 
+        )
+
+    [isSuccess:protected] => 1
+    [errors:protected] => Bitrix\Main\ErrorCollection Object
+        (
+            [values:protected] => Array
+                (
+                )
+
+        )
+
+    [data:protected] => Array
+        (
+            [UF_LOGIN] => adminwwf
+            [UF_PASSWORD] => $2y$10$8M2tPARqHnuX2GFd74d09eFAVh9uT8uU22oRTSRNhmeKkFtJaWTTe
+        )
+
+)
+#end#
+------------------------------------
+#start#---- 02.06.2023 11:09:24 ---  [1] ----
+Array
+(
+    [LOGIN] => kekek
+    [EMAIL] => kekek@kekek.ru
+    [PASSWORD] => kekek
+    [CONFIRM_PASSWORD] => kekek
+    [ACTIVE] => Y
+)
+#end#
+------------------------------------
+#start#---- 02.06.2023 11:10:46 ---  [1] ----
+#end#
+------------------------------------
+#start#---- 02.06.2023 11:13:35 ---  [1] ----
+#end#
+------------------------------------
+#start#---- 02.06.2023 11:16:10 ---  [1] ----
+#end#
+------------------------------------
+#start#---- 02.06.2023 11:17:16 ---  [1] ----
+Пользователь с логином "kekek12" уже существует.<br>#end#
+------------------------------------
+#start#---- 02.06.2023 11:17:35 ---  [1] ----
+#end#
+------------------------------------

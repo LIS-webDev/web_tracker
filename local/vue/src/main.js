@@ -36,6 +36,7 @@ const router = createRouter({
 const App = {
     data() {
         return {
+            userLogin: ""
         }
     },
     components: {

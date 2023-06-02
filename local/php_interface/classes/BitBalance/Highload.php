@@ -15,8 +15,7 @@ class Highload {
     public  $entity_data_class;
 
     public function __construct(int $id)
-    {
-        $this->higloadId = $id;
+    {        $this->higloadId = $id;
         $hlblArray = $this->getHlblockArray($id);
         $this->entity = HL\HighloadBlockTable::compileEntity($hlblArray);
         $this->entity_data_class = $this->entity->getDataClass();
@@ -46,9 +45,11 @@ class Highload {
         return $this->entity_data_class;
     }
 
-    public function add(array $data):void
+    public function add(array $data):int
     {
-        $this->getEntityDataClass()::add($data);
+         $resId = $this->getEntityDataClass()::add($data);
+//         \BitBalance\Tools::log($resId->getId());
+         return $resId->getId();
     }
 
 }

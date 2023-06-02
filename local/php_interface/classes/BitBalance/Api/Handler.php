@@ -7,6 +7,7 @@ use Bitrix\Main\Loader;
 use Bitrix\Highloadblock as HL;
 use Bitrix\Main\Entity\Query;
 use CEvent;
+use CUser;
 use CIBlockElement;
 use BitBalance\Highload;
 
@@ -265,13 +266,30 @@ class Handler
             "UF_PASSWORD" => $hashedPass,
         ];
 
-        $hlbl->add($data);
-        return ['ok'];
+        $user = new CUser;
+        $userFields = [
+            "LOGIN" => $body['login'],
+            "EMAIL" => $body['email'],
+            "PASSWORD" => $body['pass'],
+            "CONFIRM_PASSWORD" => $body['pass'],
+            "ACTIVE" => "Y",
+        ];
+        $ID = $user->Add($userFields);
+        if ($ID) {
+            $addedElemId = $hlbl->add($data);
+            $_SESSION['USER_LOGIN'] = $body['login'];
+        }
+//        \BitBalance\Tools::log($user->LAST_ERROR);
+        return ['TABLE_ELEM_ID' => $addedElemId ?? false, "USER_ID" => $ID, "ERROR" => $user->LAST_ERROR];
     }
 
-    public static function auth($urlParams = []): array
+    public static function auth($urlParams = [], $body = []): array
     {
-        return $_SERVER;
+        $user = new CUser;
+        $isLogin = $user->Login($body['login'], $body['pass']);
+//        $userObj = CUser::GetByLogin($body['login']);
+        
+        return [$isLogin];
     }
 
 }

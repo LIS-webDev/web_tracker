@@ -9,6 +9,10 @@
             <input v-model.trim="login" class="default-input" id="user-login" type="text" name="login">
           </div>
           <div class="register__input-row">
+            <label class="default-label" for="user-email">Email:</label>
+            <input v-model.trim="email" class="default-input" id="user-email" type="email" name="email">
+          </div>
+          <div class="register__input-row">
             <label class="default-label" for="user-pass">Пароль:</label>
             <input v-model.trim="password" class="default-input" id="user-pass" type="password" name="pass">
           </div>
@@ -28,7 +32,8 @@ export default defineComponent({
   data() {
     return {
       login: "",
-      password: ""
+      password: "",
+      email: ""
     }
   },
   methods: {
@@ -37,13 +42,17 @@ export default defineComponent({
         method: 'POST',
         body: JSON.stringify({
           login: this.login,
-          pass: this.password
+          pass: this.password,
+          email: this.email
         })
       })
           .then(response => response.json())
-          .then(data => {
-            console.log(data);
-            this.$router.push({name: 'HomeView', params: { userLogin: this.login}});
+          .then(result => {
+            console.log(result);
+            if (!result.ERROR) {
+              this.$parent.userLogin = this.login;
+            }
+            this.$router.push({name: 'HomeView'});
           });
     }
   }

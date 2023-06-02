@@ -6,11 +6,11 @@
         <form id="auth" class="default-form" action="" @submit.prevent="sendForm">
           <div class="register__input-row">
             <label class="default-label" for="user-auth-login">Логин:</label>
-            <input class="default-input" id="user-auth-login" type="text" name="login" value="">
+            <input v-model.trim="login" class="default-input" id="user-auth-login" type="text" name="login">
           </div>
           <div class="register__input-row">
             <label class="default-label" for="user-auth-pass">Пароль:</label>
-            <input class="default-input" id="user-auth-pass" type="password" name="pass" value="">
+            <input v-model.trim="password" class="default-input" id="user-auth-pass" type="password" name="pass">
           </div>
           <button class="register__submit-btn default-submit-btn" >Войти</button>
         </form>
@@ -26,16 +26,24 @@ export default defineComponent({
   name: "AuthUser",
   data() {
     return {
-
+      login: "",
+      password: "",
     }
   },
   methods: {
      sendForm() {
-       fetch('/api/test/')
+       fetch('/api/user/auth/', {
+         method: "POST",
+         body: JSON.stringify({
+           login: this.login,
+           pass: this.password,
+         })
+       })
       .then(response => response.json())
-      .then(data => {
-        console.log(data);
-        this.$router.push('/register');
+      .then(result => {
+        // if (typeof result)
+        console.log(result.data);
+        // this.$router.push({name: 'HomeView'});
       });
     }
   }
