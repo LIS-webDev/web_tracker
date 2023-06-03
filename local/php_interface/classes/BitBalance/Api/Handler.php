@@ -256,8 +256,11 @@ class Handler
 
     public static function register($urlParams = [], $body = []): array
     {
+        global $USER;
         $highloadTableUserId = 1;
         $hlbl = new Highload($highloadTableUserId);
+        $ID = 0;
+        $login = "";
 
         $hashedPass = password_hash($body['pass'], PASSWORD_BCRYPT );
 
@@ -273,23 +276,63 @@ class Handler
             "PASSWORD" => $body['pass'],
             "CONFIRM_PASSWORD" => $body['pass'],
             "ACTIVE" => "Y",
+            "GROUP_ID" => [5]
         ];
         $ID = $user->Add($userFields);
         if ($ID) {
             $addedElemId = $hlbl->add($data);
             $_SESSION['USER_LOGIN'] = $body['login'];
+            $_SESSION['USER_ID'] = $ID;
+            $login = $body['login'];
+            $USER->Authorize($ID);
         }
-//        \BitBalance\Tools::log($user->LAST_ERROR);
-        return ['TABLE_ELEM_ID' => $addedElemId ?? false, "USER_ID" => $ID, "ERROR" => $user->LAST_ERROR];
+
+        return ['TABLE_ELEM_ID' => $addedElemId ?? false, "user_id" => $ID, 'login' => $login, "ERROR" => $user->LAST_ERROR];
     }
 
     public static function auth($urlParams = [], $body = []): array
     {
-        $user = new CUser;
-        $isLogin = $user->Login($body['login'], $body['pass']);
-//        $userObj = CUser::GetByLogin($body['login']);
+        global $USER;
+        $USER = new CUser;
+        $login = "";
+        $userId = 0;
+        $isLogin = $USER->Login($body['login'], $body['pass']);
+        if ($isLogin) {
+            $_SESSION['USER_LOGIN'] = $body['login'];
+            $_SESSION['USER_ID'] = $USER->GetID();
+            $login = $body['login'];
+            $userId = $USER->GetID();
+        }
         
-        return [$isLogin];
+        return ["auth" =>$isLogin, "login" => $login, "user_id" => $userId];
+    }
+
+    public static function checkAuth($urlParams = []): array
+    {
+        global $USER;
+        $isAuth = $USER->IsAuthorized();
+        $userId = 0;
+        $userLogin = "";
+        if ($isAuth) {
+            $userId = $USER->GetID();
+            $userLogin = $USER->GetLogin();
+        }
+        return [
+            "isAuth" => $isAuth,
+            "login" => $userLogin,
+            "user_id" => $userId
+        ];
+    }
+
+    public static function logout($urlParams = []): bool
+    {
+        global $USER;
+        $USER->Logout();
+        if (!empty($_SESSION['USER_LOGIN']) && !empty($_SESSION['USER_ID'])) {
+            unset($_SESSION['USER_LOGIN']);
+            unset($_SESSION['USER_ID']);
+        }
+        return true;
     }
 
 }

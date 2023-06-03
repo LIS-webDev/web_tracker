@@ -13,6 +13,7 @@
     "vue": "^3.2.13",
     "vue-router": "^4.2.2",
     "vue-yandex-maps": "^0.12.3",
+    "vuex": "^4.0.2",
     "ymaps-vue-components": "^0.1.11"
   },
   "devDependencies": {

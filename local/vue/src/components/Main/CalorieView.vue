@@ -1,5 +1,5 @@
 <template>
-
+    <div></div>
 </template>
 
 <script>
@@ -11,6 +11,9 @@ export default defineComponent({
     return {
 
     }
+  },
+  created() {
+
   },
   methods: {
 

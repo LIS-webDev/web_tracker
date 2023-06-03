@@ -1,3 +1,6 @@
+[v-cloak] {
+  display: none;
+}
 .app {
   height: 100vh;
   width: 100%;
@@ -7,11 +10,17 @@
 .main {
   height: inherit;
   &__content {
+    padding: 2rem 1rem 2rem 14rem;
     height: inherit;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+  }
+
+  &__content.inner {
+    align-items: flex-start;
+    justify-content: flex-start;
   }
 }
 .aside {
@@ -38,6 +47,7 @@
     }
     a {
       color: #000000;
+      line-height: 20px;
     }
   }
 }
@@ -140,14 +150,6 @@
     flex-direction: column;
     align-items: center;
   }
-  &__input-row {
-    margin-bottom: 30px;
-    display: flex;
-    justify-content: space-between;
-    label {
-      padding-right: 10px;
-    }
-  }
 
   &__submit-btn {
     display: block;
@@ -158,6 +160,15 @@
 .title {
   font-size: 35px;
   font-weight: 700;
+}
+
+.default__input-row {
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+  label {
+    padding-right: 10px;
+  }
 }
 
 .default-label {
@@ -187,5 +198,35 @@
   &:hover {
     background-color: rgba(107, 120, 188, 0.5);
     color: #fff;
+  }
+}
+
+.default-select {
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.profile {
+  &__title {
+    margin-bottom: 2.5rem;
+  }
+
+  &__content {
+    display: flex;
+    margin: 0 -1.5rem;
+    height: 100%;
+  }
+
+  &__column {
+    padding: 0 1.5rem;
+    &:last-child {
+      border-left: 1px solid #000;
+    }
+  }
+
+  &__count {
+    font-size: 20px;
+    margin-bottom: 1rem;
   }
 }

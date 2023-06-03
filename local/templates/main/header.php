@@ -22,7 +22,6 @@ use BitBalance\VueFiles;
 </head>
 <?php $APPLICATION->ShowPanel();?>
 <body>
-<?php if ($USER->isAdmin()):?>
 <div id="app" class="app">
     <aside class="aside">
         <div class="aside__content-wrapper">
@@ -38,5 +37,4 @@ use BitBalance\VueFiles;
         </div>
     </aside>
     <main class="main">
-        <div class="main__content">
-<?php endif;?>
+        <div class="main__content" :class="{inner: isInner}">
