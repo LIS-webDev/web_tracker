@@ -3,7 +3,9 @@
   <div v-cloak v-if="isAuth" class="home">
     HELLO, {{this.$store.state.userLogin}}
   </div>
-  <div v-else>Please, authorize!</div>
+  <div class="main-banner" v-else>
+      <img src="/local/templates/main/img/main-banner.svg" alt="BitBalance">
+  </div>
 </template>
 
 <script>

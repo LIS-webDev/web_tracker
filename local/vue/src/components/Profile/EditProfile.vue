@@ -1,7 +1,7 @@
 <template>
     <div v-cloak class="profile">
         <div class="profile__wrapper">
-          <h2 class="profile__title title">Добрый день, {{this.$store.state.userLogin}}!</h2>
+          <h2 class="profile__title title">Добро пожаловать, {{this.$store.state.userLogin}}!</h2>
           <div class="profile__content">
             <div class="profile__column">
               <form id="profile" action="" @submit.prevent="updateProfile">
@@ -49,7 +49,7 @@
                     <option value="1.9" title="ежедневные интенсивные тренировки или физическая работа">очень высокая активность</option>
                   </select>
                 </div>
-                <button class="profile__submit-btn default-submit-btn">Обновить</button>
+                <button class="profile__submit-btn default-submit-btn center-btn">Обновить</button>
               </form>
             </div>
             <div class="profile__column">
@@ -96,7 +96,6 @@ export default defineComponent({
           break;
       }
       return BMR;
-
     },
     proteinCount() {
       let proteinPercent = 0;
@@ -152,14 +151,35 @@ export default defineComponent({
   },
   methods: {
     updateProfile() {
-
-    }
+        let user = {},
+            userSettings = {};
+        if (this.login) {
+          user['LOGIN'] = this.login;
+        } else {
+          user['LOGIN'] = this.$store.state.userLogin;
+        }
+        if (this.password) {
+          user['PASSWORD'] = this.password;
+        }
+        if (this.email) {
+          user['EMAIL'] = this.email;
+        }
+        // if (this.calorieCount) {
+          // userSettings['UF_'] =
+        // }
+        fetch('/api/user/update/',{
+          method: 'POST',
+          body: JSON.stringify({
+              user: user,
+              user_settings: userSettings
+          })
+        })
+            .then(response => response.json())
+            .then(result => {
+              console.log(result);
+            });
+    },
   },
-  created() {
-      if (!this.isAuth) {
-        this.$router.push({name: 'HomeView'});
-      }
-  }
 })
 </script>
 

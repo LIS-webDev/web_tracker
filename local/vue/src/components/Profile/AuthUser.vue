@@ -12,7 +12,7 @@
             <label class="default-label" for="user-auth-pass">Пароль:</label>
             <input required v-model.trim="password" class="default-input" id="user-auth-pass" type="password" name="pass">
           </div>
-          <button class="register__submit-btn default-submit-btn" >Войти</button>
+          <button class="register__submit-btn default-submit-btn center-btn" >Войти</button>
         </form>
       </div>
     </div>

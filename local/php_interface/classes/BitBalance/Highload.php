@@ -48,8 +48,13 @@ class Highload {
     public function add(array $data):int
     {
          $resId = $this->getEntityDataClass()::add($data);
-//         \BitBalance\Tools::log($resId->getId());
          return $resId->getId();
+    }
+
+    public function update(int $id, array $data):int
+    {
+        $resId = $this->getEntityDataClass()::update($id, $data);
+        return $resId->getId();
     }
 
 }

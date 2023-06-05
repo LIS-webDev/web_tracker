@@ -11,7 +11,6 @@ use CUser;
 use CIBlockElement;
 use BitBalance\Highload;
 
-
 class Handler
 {
     private static $message = null;//сообщение ответа в апи
@@ -267,6 +266,7 @@ class Handler
         $data = [
             "UF_LOGIN" => $body['login'],
             "UF_PASSWORD" => $hashedPass,
+            "UF_EMAIL" => $body['email']
         ];
 
         $user = new CUser;
@@ -335,4 +335,48 @@ class Handler
         return true;
     }
 
+    public static function updateUser($urlParams = [], $body = []): array
+    {
+        global $USER;
+
+        $highloadTableUserId = 1;
+        $highloadTableUserSettingsId = 2;
+
+        $hlblUser = new Highload($highloadTableUserId);
+        $hlblUserSettings = new Highload($highloadTableUserSettingsId);
+
+        $userSettingsFields = [];
+
+        $status = false;
+        $userFields = ['UF_LOGIN' => $body['user']['LOGIN']];
+        if (!empty($body['user']['PASSWORD'])) {
+            $hashedPass = password_hash($body['user']['PASSWORD'], PASSWORD_BCRYPT );
+            $userFields['UF_PASSWORD'] = $hashedPass;
+        }
+        if (!empty($body['user']['EMAIL'])) {
+            $userFields['UF_EMAIL'] = $body['user']['EMAIL'];
+        }
+
+        $userQuery = new Query($hlblUser->getEntity());
+        $userQuery->setSelect(["ID", 'UF_LOGIN'])
+                ->setFilter(['UF_LOGIN' => $userFields['UF_LOGIN']]);
+        $resultUserQuery = $userQuery->exec();
+        $arUser = $resultUserQuery->fetch();
+
+        $userSettingsQuery = new Query($hlblUserSettings->getEntity());
+        $userSettingsQuery->setSelect(['ID'])
+                        ->setFilter(['UF_FOREIGN_KEY_USER' => $arUser['ID']]);
+        $resultUserSettingsQuery = $userSettingsQuery->exec();
+        $arUserSettings = $resultUserSettingsQuery->fetch();
+
+        $USER->Update($USER->GetID(), $userFields, false);
+        if (!$USER->LAST_ERROR) {
+            $status = true;
+            $updatedUserElemId = $hlblUser->update($arUser['ID'], $userFields);
+            $updatedUserSettingsElemId = $hlblUserSettings->update($arUserSettings['ID'], $userSettingsFields);
+        }
+//        \BitBalance\Tools::log($USER->LAST_ERROR);
+
+        return ['status' => $status, 'updatedUserElemId' => $updatedUserElemId ?? 0, 'updatedUserSettingsElemId' => $userSettingsFields ?? 0, "error" => $USER->LAST_ERROR];
+    }
 }

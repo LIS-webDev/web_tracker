@@ -118,6 +118,8 @@ const App = {
                     if (result.success && result.data.isAuth) {
                         this.$store.state.userId = result.data.user_id;
                         this.$store.state.userLogin = result.data.login;
+                    } else {
+                        this.$router.push({name: 'HomeView'});
                     }
                     console.log(result);
                 });
@@ -125,7 +127,7 @@ const App = {
     },
     computed: {
         isAuth() {
-            return this.$store.state.userId && this.$store.state.userLogin
+            return this.$store.state.userId && this.$store.state.userLogin;
         },
         isInner() {
             return this.$route.path !== "/" && this.$route.path !== "/auth/" && this.$route.path !== "/register/";

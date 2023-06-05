@@ -1,5 +1,51 @@
 <template>
-  <div class="register">
+  <div class="register register-data">
+    <div class="register__wrapper">
+      <h2 class="register__title title">Ваши данные</h2>
+      <div class="register__form">
+        <form id="register-data" action="" class="default-form">
+          <div class="default__input-row register__input-row">
+            <label class="default-label" for="user-age">Возраст:</label>
+            <input v-model.trim="age" class="default-input" id="user-age" type="text" name="age">
+          </div>
+          <div class="default__input-row register__input-row">
+            <label class="default-label" for="user-height">Рост:</label>
+            <input v-model.trim="height" class="default-input" id="user-height" type="text" name="height">
+          </div>
+          <div class="default__input-row register__input-row">
+            <label class="default-label" for="user-weight">Вес:</label>
+            <input v-model.trim="weight" class="default-input" id="user-weight" type="text" name="weight">
+          </div>
+          <div class="default__input-row">
+            <label class="default-label" for="user-goal">Ваша цель:</label>
+            <select class="default-select" id="user-goal" v-model="goal" name="goal">
+              <option disabled value="">Выберите одну из целей</option>
+              <option value="less">Похудение</option>
+              <option value="stay">Поддержание веса</option>
+              <option value="up">Набор массы</option>
+            </select>
+          </div>
+          <div class="default__input-row">
+            <label class="default-label" for="user-activity">Тип активности:</label>
+            <select class="default-select" id="user-activity" v-model="activity" name="activity">
+              <option disabled value="">Выберите один из вариантов</option>
+              <option value="1.2" title="сидячая работа без физических нагрузок">минимальная активность</option>
+              <option value="1.375" title="умеренные тренировки 1-3 раза в неделю">легкая активность</option>
+              <option value="1.55" title="тренировки 3-5 раз в неделю">средняя активность</option>
+              <option value="1.725" title="интенсивные тренировки 6-7 раз в неделю">высокая активность</option>
+              <option value="1.9" title="ежедневные интенсивные тренировки или физическая работа">очень высокая активность</option>
+            </select>
+          </div>
+          <h3 class="register__sub-title sub-title">Вы также можете сделать это после регистрации<span>*</span></h3>
+          <div class="register__btns">
+            <div class="default-submit-btn skip-btn" @click.prevent="skip">Пропустить</div>
+            <div class="register__submit-btn default-submit-btn" @click.prevent="skip">Запомнить</div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="register none">
     <div class="register__wrapper">
       <h2 class="register__title title">Регистрация</h2>
       <div class="register__form">
@@ -16,7 +62,10 @@
             <label class="default-label" for="user-pass">Пароль:</label>
             <input required v-model.trim="password" class="default-input" id="user-pass" type="password" name="pass">
           </div>
-          <button class="register__submit-btn default-submit-btn">Зарегистрироваться</button>
+          <div class="register__btns">
+            <div class="default-submit-btn" @click.prevent="skip">Вернуться</div>
+            <button class="register__submit-btn default-submit-btn">Зарегистрироваться</button>
+          </div>
         </form>
       </div>
     </div>
@@ -34,6 +83,11 @@ export default defineComponent({
       login: "",
       password: "",
       email: "",
+      age: "",
+      height: "",
+      weight: "",
+      goal: "",
+      activity: "",
       error: false,
       errorMessage: ""
     }
@@ -45,7 +99,17 @@ export default defineComponent({
         body: JSON.stringify({
           login: this.login,
           pass: this.password,
-          email: this.email
+          email: this.email,
+          age: this.age,
+          height: this.height,
+          weight: this.weight,
+          goal: this.goal,
+          activity: this.activity,
+          calorie: this.calorieCount,
+          protein: this.proteinCount,
+          fat: this.fatCount,
+          carb: this.carbCount,
+          water: this.waterCount
         })
       })
           .then(response => response.json())
@@ -57,7 +121,78 @@ export default defineComponent({
               this.$router.push({name: 'HomeView'});
             }
           });
+    },
+    skip() {
+        const registerData = document.querySelector('.register-data');
+        const register = document.querySelector('.register:not(.register-data)')
+
+        registerData.classList.toggle('none');
+        register.classList.toggle('none');
     }
+  },
+  computed: {
+    calorieCount() {
+      // Формула Харриса-Бенедикта
+      let BMR = Math.round((88.362 + (13.397 * Number(this.weight)) + (4.799 * Number(this.height)) - (5.677 * Number(this.age))) * Number(this.activity));
+      switch (this.goal){
+        case 'less':
+          BMR -= 300;
+          break;
+        case 'up':
+          BMR += 300;
+          break;
+      }
+      return BMR;
+
+    },
+    proteinCount() {
+      let proteinPercent = 0;
+      switch (this.goal){
+        case 'less':
+          proteinPercent = 0.4;
+          break;
+        case 'stay':
+          proteinPercent = 0.2;
+          break;
+        case 'up':
+          proteinPercent = 0.3;
+          break;
+      }
+      return Math.round(Number(this.calorieCount) * proteinPercent / 4);
+    },
+    fatCount() {
+      let fatPercent = 0;
+      switch (this.goal){
+        case 'less':
+          fatPercent = 0.4;
+          break;
+        case 'stay':
+          fatPercent = 0.3;
+          break;
+        case 'up':
+          fatPercent = 0.2;
+          break;
+      }
+      return Math.round(Number(this.calorieCount) * fatPercent / 9);
+    },
+    carbCount() {
+      let carbPercent = 0;
+      switch (this.goal){
+        case 'less':
+          carbPercent = 0.2;
+          break;
+        case 'stay':
+          carbPercent = 0.5;
+          break;
+        case 'up':
+          carbPercent = 0.6;
+          break;
+      }
+      return Math.round(Number(this.calorieCount) * carbPercent / 4);
+    },
+    waterCount() {
+      return Math.round(Number(this.weight) / 30 * 1000);
+    },
   }
 })
 </script>

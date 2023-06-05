@@ -1,5 +1,6 @@
 <?php
 /** @var BitBalance\Api\Handler $Api */
+
 //----для примера----
 //вернет ответ на GET запрос
 $Api->handlerGet("/api/test/", [
@@ -18,6 +19,12 @@ $Api->handlerPost("/api/user/auth/", [
     'callback' => [ "\BitBalance\Api\Handler", "auth" ],
     'needAuth' => false,
     'exceptionMessage' => 'Не получилось авторизоваться',
+]);
+
+$Api->handlerPost("/api/user/update/", [
+    'callback' => [ "\BitBalance\Api\Handler", "updateUser" ],
+    'needAuth' => false,
+    'exceptionMessage' => 'Не получилось обновить данные',
 ]);
 
 $Api->handlerGet("/api/user/logout/", [
