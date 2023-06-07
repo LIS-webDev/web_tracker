@@ -19,15 +19,15 @@
                 </div>
                 <div class="default__input-row">
                   <label class="default-label" for="user-profile-age">Возраст:</label>
-                  <input v-model.trim="age" class="default-input" id="user-profile-age" type="text" name="age">
+                  <input v-model.trim="age" @keypress="isNumber" class="default-input" id="user-profile-age" type="text" name="age">
                 </div>
                 <div class="default__input-row">
                   <label class="default-label" for="user-profile-height">Рост:</label>
-                  <input v-model.trim="height" class="default-input" id="user-profile-height" type="text" name="height">
+                  <input v-model.trim="height" @keypress="isNumber" class="default-input" id="user-profile-height" type="text" name="height">
                 </div>
                 <div class="default__input-row">
                   <label class="default-label" for="user-profile-weight">Вес:</label>
-                  <input v-model.trim="weight" class="default-input" id="user-profile-weight" type="text" name="weight">
+                  <input v-model.trim="weight" @keypress="isNumber" class="default-input" id="user-profile-weight" type="text" name="weight">
                 </div>
                 <div class="default__input-row">
                   <label class="default-label" for="user-profile-goal">Ваша цель:</label>
@@ -143,11 +143,13 @@ export default defineComponent({
       return Math.round(Number(this.calorieCount) * carbPercent / 4);
     },
     waterCount() {
-      return Math.round(Number(this.weight) / 30 * 1000);
+      let waterMl = Math.round(Number(this.weight) / 30 * 1000);
+      this.$store.commit('setTotalWaterCount', waterMl);
+      return waterMl;
     },
     isAuth() {
       return this.$store.state.userId && this.$store.state.userLogin;
-    }
+    },
   },
   methods: {
     updateProfile() {
@@ -179,7 +181,26 @@ export default defineComponent({
               console.log(result);
             });
     },
+    isNumber(event) {
+      let charCode = event.keyCode;
+      if ((charCode > 31 && (charCode < 48 || charCode > 57))) {
+        event.preventDefault();
+      } else {
+        return true;
+      }
+    },
+    getUserData() {
+      fetch('/api/user/get/')
+          .then(response => response.json())
+          .then(result => {
+            this.login = result.data.UF_LOGIN;
+            this.email = result.data.UF_EMAIL;
+          });
+    },
   },
+  created() {
+    this.getUserData();
+  }
 })
 </script>
 

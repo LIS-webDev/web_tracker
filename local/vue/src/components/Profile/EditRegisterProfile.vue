@@ -6,15 +6,15 @@
         <form id="register-data" action="" class="default-form">
           <div class="default__input-row register__input-row">
             <label class="default-label" for="user-age">Возраст:</label>
-            <input v-model.trim="age" class="default-input" id="user-age" type="text" name="age">
+            <input v-model.trim="age" @keypress="isNumber" class="default-input" id="user-age" type="text" name="age">
           </div>
           <div class="default__input-row register__input-row">
             <label class="default-label" for="user-height">Рост:</label>
-            <input v-model.trim="height" class="default-input" id="user-height" type="text" name="height">
+            <input v-model.trim="height" @keypress="isNumber" class="default-input" id="user-height" type="text" name="height">
           </div>
           <div class="default__input-row register__input-row">
             <label class="default-label" for="user-weight">Вес:</label>
-            <input v-model.trim="weight" class="default-input" id="user-weight" type="text" name="weight">
+            <input v-model.trim="weight" @keypress="isNumber" class="default-input" id="user-weight" type="text" name="weight">
           </div>
           <div class="default__input-row">
             <label class="default-label" for="user-goal">Ваша цель:</label>
@@ -94,27 +94,29 @@ export default defineComponent({
   },
   methods: {
     register() {
+      let userSettings = {
+        "UF_CALORIE": this.calorieCount,
+        "UF_HEIGHT": this.height,
+        "UF_WEIGHT": this.weight,
+        "UF_PROTEIN": this.proteinCount,
+        "UF_FAT": this.fatCount,
+        "UF_CARB": this.carbCount,
+        "UF_WATER": this.waterCount,
+        "UF_GOAL": this.goalFormat,
+        "UF_FOREIGN_KEY_PHYSICAL_TYPE": this.activityFormat
+      };
+
       fetch('/api/user/register/', {
         method: 'POST',
         body: JSON.stringify({
           login: this.login,
           pass: this.password,
           email: this.email,
-          age: this.age,
-          height: this.height,
-          weight: this.weight,
-          goal: this.goal,
-          activity: this.activity,
-          calorie: this.calorieCount,
-          protein: this.proteinCount,
-          fat: this.fatCount,
-          carb: this.carbCount,
-          water: this.waterCount
+          userSettings: userSettings
         })
       })
           .then(response => response.json())
           .then(result => {
-            console.log(result);
             if (!result.data.ERROR) {
               this.$store.state.userId = result.data.user_id;
               this.$store.state.userLogin = result.data.login;
@@ -128,6 +130,14 @@ export default defineComponent({
 
         registerData.classList.toggle('none');
         register.classList.toggle('none');
+    },
+    isNumber(event) {
+      let charCode =  event.keyCode;
+      if ((charCode > 31 && (charCode < 48 || charCode > 57))) {
+        event.preventDefault();
+      } else {
+        return true;
+      }
     }
   },
   computed: {
@@ -193,6 +203,32 @@ export default defineComponent({
     waterCount() {
       return Math.round(Number(this.weight) / 30 * 1000);
     },
+    goalFormat() {
+      switch (this.goal) {
+        case "less":
+          return "Похудение";
+        case "stay":
+          return "Поддержание веса";
+        case "up":
+          return "Набор массы";
+        default:
+          return "";
+      }
+    },
+    activityFormat() {
+      switch (this.activity) {
+        case "1.375":
+          return 2;
+        case "1.55":
+          return 3;
+        case "1.725":
+          return 4;
+        case "1.9":
+          return 5;
+        default:
+          return 1;
+      }
+    }
   }
 })
 </script>

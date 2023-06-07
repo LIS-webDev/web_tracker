@@ -3,6 +3,8 @@ import {createRouter, createWebHistory} from 'vue-router'
 import { createStore } from 'vuex'
 import { defineAsyncComponent } from 'vue'
 import './assets/style.scss'
+import ElementPlus from 'element-plus'
+import ru from 'element-plus/dist/locale/ru.mjs'
 
 window.createApp = createApp;
 
@@ -11,8 +13,36 @@ const store = createStore({
         return {
             userId: 0,
             userLogin: "",
+            addedProducts: {
+                breakfast: [],
+                lunch: [],
+                dinner: [],
+                snack: []
+            },
+            addedWater: 0,
+            totalWaterCount: 0
         }
     },
+    mutations: {
+        addBreakfastProduct (state, product) {
+            state.addedProducts.breakfast.push(product);
+        },
+        addLunchProduct (state, product) {
+            state.addedProducts.lunch.push(product);
+        },
+        addDinnerProduct (state, product) {
+            state.addedProducts.dinner.push(product);
+        },
+        addSnackProduct (state, product) {
+            state.addedProducts.snack.push(product);
+        },
+        addWater(state,count) {
+            state.addedWater += Number(count);
+        },
+        setTotalWaterCount(state,count) {
+            state.totalWaterCount = Number(count);
+        }
+    }
 });
 
 // eslint-disable-next-line
@@ -107,12 +137,13 @@ const App = {
             loader: () => import('./components/Main/CalorieView'),
         }),
     },
-     mounted() {
+     created() {
         this.getUser();
+        this.getUserData();
     },
     methods: {
-          getUser() {
-             fetch('/api/user/check_auth/')
+           getUser() {
+              fetch('/api/user/check_auth/')
                 .then(response => response.json())
                 .then(result => {
                     if (result.success && result.data.isAuth) {
@@ -121,19 +152,26 @@ const App = {
                     } else {
                         this.$router.push({name: 'HomeView'});
                     }
+                });
+        },
+        getUserData() {
+            fetch('/api/user/get/')
+                .then(response => response.json())
+                .then(result => {
                     console.log(result);
                 });
-        }
+        },
     },
     computed: {
         isAuth() {
             return this.$store.state.userId && this.$store.state.userLogin;
         },
         isInner() {
-            return this.$route.path !== "/" && this.$route.path !== "/auth/" && this.$route.path !== "/register/";
+            return this.$route.path !== "/auth/" && this.$route.path !== "/register/";
         }
     }
 }
 const app = createApp(App);
 app.use(store);
+app.use(ElementPlus, {locale: ru,});
 app.use(router).mount('#app');

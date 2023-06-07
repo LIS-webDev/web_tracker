@@ -1,3 +1,4 @@
+@import 'stat.scss';
 [v-cloak] {
   display: none;
 }
@@ -189,7 +190,14 @@ body {
   display: flex;
   justify-content: space-between;
   label {
-    padding-right: 10px;
+    padding-right: 1rem;
+  }
+}
+
+.default__input-row.justify-start {
+  justify-content: flex-start;
+  label {
+    padding-right: 2rem;
   }
 }
 
@@ -298,9 +306,32 @@ body {
     &:last-child {
       border-left: 1px solid #000;
     }
+    .column-item {
+      margin-bottom: 1rem;
+    }
   }
 
   &__sub-title {
     margin-bottom: 1.5rem;
   }
 }
+
+.water {
+  &__title {
+    margin-bottom: 2.5rem;
+  }
+  &__progress-bar {
+    margin-bottom: 2rem;
+  }
+}
+
+.calorie-burn {
+  &__title {
+    margin-bottom: 2.5rem;
+  }
+
+  &__progress-bar {
+    margin-bottom: 2rem;
+  }
+}
+
