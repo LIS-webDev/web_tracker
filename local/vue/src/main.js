@@ -20,7 +20,16 @@ const store = createStore({
                 snack: []
             },
             addedWater: 0,
-            totalWaterCount: 0
+            totalWaterCount: 0,
+            totalCalorie: 0,
+            addedCalorie: 0,
+            burnedCalorie: 0,
+            totalProtein: 0,
+            addedProtein: 0,
+            totalFat: 0,
+            addedFat: 0,
+            totalCarb: 0,
+            addedCarb: 0,
         }
     },
     mutations: {
@@ -41,7 +50,34 @@ const store = createStore({
         },
         setTotalWaterCount(state,count) {
             state.totalWaterCount = Number(count);
-        }
+        },
+        setTotalCalorie(state,count) {
+            state.totalCalorie = Number(count);
+        },
+        addCalorie(state,count) {
+            state.addedCalorie += Number(count);
+        },
+        setTotalProtein(state,count) {
+            state.totalProtein = Number(count);
+        },
+        setTotalFat(state,count) {
+            state.totalFat = Number(count);
+        },
+        setTotalCarb(state,count) {
+            state.totalCarb = Number(count);
+        },
+        addProtein(state,count) {
+            state.addedProtein += Number(count);
+        },
+        addFat(state,count) {
+            state.addedFat += Number(count);
+        },
+        addCarb(state,count) {
+            state.addedCarb += Number(count);
+        },
+        addBurnedCalorie(state,count) {
+            state.burnedCalorie += Number(count);
+        },
     }
 });
 
@@ -140,6 +176,8 @@ const App = {
      created() {
         this.getUser();
         this.getUserData();
+        this.getWaterData();
+        this.getTodayStat();
     },
     methods: {
            getUser() {
@@ -158,9 +196,32 @@ const App = {
             fetch('/api/user/get/')
                 .then(response => response.json())
                 .then(result => {
-                    console.log(result);
+                    this.$store.commit('setTotalCalorie', result.data.user_settings.UF_CALORIE);
+                    this.$store.commit('setTotalWaterCount', result.data.user_settings.UF_WATER);
+                    this.$store.commit('setTotalProtein', result.data.user_settings.UF_PROTEIN);
+                    this.$store.commit('setTotalFat', result.data.user_settings.UF_FAT);
+                    this.$store.commit('setTotalCarb', result.data.user_settings.UF_CARB);
                 });
         },
+        getWaterData() {
+            fetch('/api/water/get/')
+                .then(response => response.json())
+                .then(result => {
+                    this.$store.commit('addWater', result.data.SUM_WATER);
+                });
+        },
+        getTodayStat() {
+            fetch('/api/stat/today/get/')
+                .then(response => response.json())
+                .then(result => {
+                    console.log(result);
+                    this.$store.commit('addCalorie', result.data.SUM_CALORIE);
+                    this.$store.commit('addProtein', result.data.SUM_PROTEIN);
+                    this.$store.commit('addFat', result.data.SUM_FAT);
+                    this.$store.commit('addCarb', result.data.SUM_CARB);
+                    this.$store.commit('addBurnedCalorie', result.data.SUM_BURN_CALORIE);
+                });
+        }
     },
     computed: {
         isAuth() {

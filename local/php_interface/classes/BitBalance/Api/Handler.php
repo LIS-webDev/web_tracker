@@ -10,6 +10,9 @@ use CEvent;
 use CUser;
 use CIBlockElement;
 use BitBalance\Highload;
+use Bitrix\Main\Type\DateTime;
+use Bitrix\Main\Type\Date;
+use DateTimeZone;
 
 class Handler
 {
@@ -257,7 +260,10 @@ class Handler
     {
         global $USER;
         $highloadTableUserId = 1;
+        $highloadTableUserSettingsId = 2;
         $hlbl = new Highload($highloadTableUserId);
+        $hlblUserSettings = new Highload($highloadTableUserSettingsId);
+
         $ID = 0;
         $login = "";
 
@@ -268,6 +274,8 @@ class Handler
             "UF_PASSWORD" => $hashedPass,
             "UF_EMAIL" => $body['email']
         ];
+
+        $userSettings = $body['userSettings'];
 
         $user = new CUser;
         $userFields = [
@@ -285,6 +293,9 @@ class Handler
             $_SESSION['USER_ID'] = $ID;
             $login = $body['login'];
             $USER->Authorize($ID);
+
+            $userSettings['UF_FOREIGN_KEY_USER'] = $addedElemId;
+            $hlblUserSettings->Add($userSettings);
         }
 
         return ['TABLE_ELEM_ID' => $addedElemId ?? false, "user_id" => $ID, 'login' => $login, "ERROR" => $user->LAST_ERROR];
@@ -341,11 +352,24 @@ class Handler
 
         $highloadTableUserId = 1;
         $highloadTableUserSettingsId = 2;
+        $highloadTableActivityId = 3;
 
         $hlblUser = new Highload($highloadTableUserId);
         $hlblUserSettings = new Highload($highloadTableUserSettingsId);
+        $hlblActivity = new Highload($highloadTableActivityId);
 
-        $userSettingsFields = [];
+        $data = [
+            'select' => ['ID'],
+            'filter' => [
+                'UF_KOEF' => $body['user_settings']['UF_FOREIGN_KEY_PHYSICAL_TYPE']
+            ]
+        ];
+
+        $resultActivityObj = $hlblActivity->getList($data);
+        $resultActivity = $resultActivityObj->fetch();
+
+        $userSettingsFields = $body['user_settings'];
+        $userSettingsFields['UF_FOREIGN_KEY_PHYSICAL_TYPE'] = $resultActivity['ID'];
 
         $status = false;
         $userFields = ['UF_LOGIN' => $body['user']['LOGIN']];
@@ -377,6 +401,300 @@ class Handler
         }
 //        \BitBalance\Tools::log($USER->LAST_ERROR);
 
-        return ['status' => $status, 'updatedUserElemId' => $updatedUserElemId ?? 0, 'updatedUserSettingsElemId' => $userSettingsFields ?? 0, "error" => $USER->LAST_ERROR];
+        return ['status' => $status, 'updatedUserElemId' => $updatedUserElemId ?? 0, 'updatedUserSettingsElemId' => $updatedUserSettingsElemId ?? 0, "error" => $USER->LAST_ERROR];
+    }
+
+    public static function getUser($urlParams = []): array
+    {
+        global $USER;
+        $highloadTableUserId = 1;
+        $highloadTableUserSettingsId = 2;
+        $highloadTablePhysical = 3;
+
+        $hlblUser = new Highload($highloadTableUserId);
+        $hlblUserSettings = new Highload($highloadTableUserSettingsId);
+        $hlblPhysical = new Highload($highloadTablePhysical);
+
+
+        $data = [
+            'select' => ['*'],
+            'filter' => [
+                'UF_LOGIN' => $USER->GetLogin()
+            ]
+        ];
+
+        $resultUserObj = $hlblUser->getList($data);
+        $resultUser = $resultUserObj->fetch();
+
+        $dataUserSettings = [
+            'select' => ['*', 'PhysicalType.*'],
+            "order" => array("ID" => "ASC"),
+            'filter' => [
+                'UF_FOREIGN_KEY_USER' => $resultUser['ID'],
+            ],
+            'runtime' => [
+                new \Bitrix\Main\Entity\ReferenceField('PhysicalType',$hlblPhysical->getEntityDataClass(),
+                    ['=this.UF_FOREIGN_KEY_PHYSICAL_TYPE' => 'ref.ID'] )
+            ]
+        ];
+
+        $resultUserSettingsObj = $hlblUserSettings->getList($dataUserSettings);
+        $result = $resultUserSettingsObj->fetch();
+        return ["user" => $resultUser, "user_settings" => $result];
+    }
+
+    public static function addProduct($urlParams = [],$body = []): array
+    {
+        global $USER;
+        $userID = \BitBalance\Api\Handler::getUserID();
+        $hlblProductId = 4;
+        $hlblMealId = 5;
+        $hlblProduct = new Highload($hlblProductId);
+        $hlblMeal = new Highload($hlblMealId);
+
+
+        $productFields = [
+            "UF_NAME" => $body['product']['name'],
+            "UF_PROTEIN" => $body['product']['protein'],
+            "UF_FAT" => $body['product']['fat'],
+            "UF_CARBS" => $body['product']['carb'],
+            "UF_CALORIES" => $body['product']['calorie'],
+            "UF_AMOUNT" => $body['product']['count'],
+        ];
+
+        $elemProductId = $hlblProduct->Add($productFields);
+        $elemMealId = false;
+        if ($elemProductId) {
+            $mealFields = [
+                "UF_FOREIGN_KEY_USER" => $userID,
+                "UF_FOREIGN_KEY_FOOD" => $elemProductId,
+                "UF_MEAL_TYPE" => $body['product']['meal']
+            ];
+
+            $elemMealId = $hlblMeal->Add($mealFields);
+        }
+        return ['added_product_id' => $elemProductId, 'meal_id' => $elemMealId];
+    }
+
+    public static function addWater($urlParams = [],$body = []): array
+    {
+        global $USER;
+        $userID = \BitBalance\Api\Handler::getUserID();
+
+        $hlblWaterId = 6;
+        $hlblWater = new Highload($hlblWaterId);
+
+        $waterFields = [
+            "UF_AMOUNT" => $body['water']['count'],
+            "UF_FOREIGN_KEY_USER" => $userID
+        ];
+
+        $res_id = $hlblWater->Add($waterFields);
+
+        return ["water_elem_id" => $res_id];
+    }
+
+    public static function addBurnedCalorie($urlParams = [],$body = []): array
+    {
+        global $USER;
+        $userID = \BitBalance\Api\Handler::getUserID();
+        $hlblCalorieId = 7;
+        $hlblCalorie = new Highload($hlblCalorieId);
+
+        $calorieFields = [
+            "UF_AMOUNT" => $body['count'],
+            "UF_FOREIGN_KEY_USER" => $userID
+        ];
+
+        $res_id = $hlblCalorie->Add($calorieFields);
+
+        return ["burned_elem_id" => $res_id];
+    }
+
+    public static function getWater($urlParams = []): array
+    {
+        global $USER;
+        $userID = \BitBalance\Api\Handler::getUserID();
+        $hlblWaterId = 6;
+        $hlblWater = new Highload($hlblWaterId);
+
+        $timeZone = new \DateTimeZone('Europe/Moscow');
+        $datetime = new \DateTime('now', $timeZone);
+        $date = \Bitrix\Main\Type\Date::createFromPhp($datetime);
+
+        $data = [
+            'select' => ['SUM_WATER'],
+            'filter' => [
+                'UF_FOREIGN_KEY_USER' => $userID,
+                "UF_DATE" => $date
+            ],
+            'runtime' => [
+                new \Bitrix\Main\Entity\ExpressionField('SUM_WATER',
+                    'SUM(%s)', array('UF_AMOUNT')
+                )
+            ]
+        ];
+
+        $resultUserObj = $hlblWater->getList($data);
+        $result = $resultUserObj->fetch();
+        return $result;
+    }
+
+    public static function getUserID(): int
+    {
+        global  $USER;
+        $highloadTableUserId = 1;
+        $hlblUser = new Highload($highloadTableUserId);
+
+        $data = [
+            'select' => ['*'],
+            'filter' => [
+                'UF_LOGIN' => $USER->GetLogin()
+            ]
+        ];
+
+        $resultUserObj = $hlblUser->getList($data);
+        $resultUser = $resultUserObj->fetch();
+        return $resultUser['ID'];
+    }
+
+    public static function getTodayStat($urlParams = []): array
+    {
+        $userID = \BitBalance\Api\Handler::getUserID();
+        $highloadTableMealId = 5;
+        $highloadTableFoodlId = 4;
+        $highloadTableActivityId = 7;
+        $hlblMeal = new Highload($highloadTableMealId);
+        $hlblFood = new Highload($highloadTableFoodlId);
+        $highloadTableActivity = new Highload($highloadTableActivityId);
+
+        $timeZone = new \DateTimeZone('Europe/Moscow');
+        $datetime = new \DateTime('now', $timeZone);
+        $date = \Bitrix\Main\Type\Date::createFromPhp($datetime);
+
+        $data = [
+            'select' => ['UF_FOREIGN_KEY_FOOD'],
+            "order" => array("ID" => "ASC"),
+            'filter' => [
+                'UF_FOREIGN_KEY_USER' => $userID,
+                "UF_DATE" => $date
+            ]
+        ];
+        $arFood = [];
+        $resultMealObj = $hlblMeal->getList($data);
+        while($resultMeal = $resultMealObj->fetch()) {
+            foreach ($resultMeal['UF_FOREIGN_KEY_FOOD'] as $food) {
+                $arFood[] = $food;
+            }
+        }
+
+        $dataFood = [
+            'select' => ['SUM_CALORIE', 'SUM_PROTEIN', 'SUM_FAT', 'SUM_CARB'],
+            'filter' => [
+                'ID' => $arFood
+            ],
+            'runtime' => [
+                new \Bitrix\Main\Entity\ExpressionField('SUM_CALORIE',
+                    'SUM(%s)', array('UF_CALORIES')
+                ),
+                new \Bitrix\Main\Entity\ExpressionField('SUM_PROTEIN',
+                    'SUM(%s)', array('UF_PROTEIN')
+                ),
+                new \Bitrix\Main\Entity\ExpressionField('SUM_FAT',
+                    'SUM(%s)', array('UF_FAT')
+                ),
+                new \Bitrix\Main\Entity\ExpressionField('SUM_CARB',
+                    'SUM(%s)', array('UF_CARBS')
+                ),
+            ]
+        ];
+        $resultFoodObj = $hlblFood->getList($dataFood);
+        $result = $resultFoodObj->fetch();
+
+        $dataActivity = [
+            'select' => ['SUM_BURN_CALORIE'],
+            'filter' => [
+                'UF_FOREIGN_KEY_USER' => $userID,
+                "UF_DATE" => $date
+            ],
+            'runtime' => [
+                new \Bitrix\Main\Entity\ExpressionField('SUM_BURN_CALORIE',
+                    'SUM(%s)', array('UF_AMOUNT')
+                ),
+
+            ]
+        ];
+
+        $resultActivityObj = $highloadTableActivity->getList($dataActivity);
+        $burnedCalorie = $resultActivityObj->fetch();
+
+        $result['SUM_BURN_CALORIE'] = $burnedCalorie['SUM_BURN_CALORIE'];
+        \BitBalance\Tools::log($result);
+
+        return $result;
+    }
+
+    public static function getPeriodStat($urlParams = [], $body=[]): array
+    {
+        $userID = \BitBalance\Api\Handler::getUserID();
+        $highloadTableMealId = 5;
+        $highloadTableFoodlId = 4;
+        $hlblMeal = new Highload($highloadTableMealId);
+        $hlblFood = new Highload($highloadTableFoodlId);
+
+
+        $timeZone = new \DateTimeZone('Europe/Moscow');
+        $datetimeStart = new \DateTime($body['start'], $timeZone);
+        $datetimeEnd = new \DateTime($body['end'], $timeZone);
+        $datetime = new \DateTime('now', $timeZone);
+        $date = \Bitrix\Main\Type\Date::createFromPhp($datetime);
+
+        $dateStart = \Bitrix\Main\Type\Date::createFromPhp($datetimeStart);
+        $dateStart->add('1 day');
+        $dateEnd = \Bitrix\Main\Type\Date::createFromPhp($datetimeEnd);
+        $dateEnd->add('1 day');
+
+        $timestamp = round(($dateEnd->getTimestamp() - $dateStart->getTimestamp()) / 60 / 60 / 24);
+        $periodData = [];
+
+        for ($i = 0; $i < $timestamp; $i++) {
+            $data = [
+                'select' => ['UF_FOREIGN_KEY_FOOD'],
+                "order" => array("ID" => "ASC"),
+                'filter' => [
+                    'UF_FOREIGN_KEY_USER' => $userID,
+                    "UF_DATE" => $dateStart,
+                ]
+            ];
+
+            $arFood = [];
+            $resultMealObj = $hlblMeal->getList($data);
+            while($resultMeal = $resultMealObj->fetch()) {
+                foreach ($resultMeal['UF_FOREIGN_KEY_FOOD'] as $food) {
+                    $arFood[] = $food;
+                }
+            }
+
+            $dataFood = [
+                'select' => ['SUM_CALORIE'],
+                'filter' => [
+                    'ID' => $arFood
+                ],
+                'runtime' => [
+                    new \Bitrix\Main\Entity\ExpressionField('SUM_CALORIE',
+                        'SUM(%s)', array('UF_CALORIES')
+                    ),
+
+                ]
+            ];
+            $resultFoodObj = $hlblFood->getList($dataFood);
+            $result = $resultFoodObj->fetch();
+            $periodData[$dateStart->toString()] = $result['SUM_CALORIE'];
+            $dateStart->add('1 day');
+        }
+
+        \BitBalance\Tools::log($periodData);
+
+        return $periodData;
     }
 }

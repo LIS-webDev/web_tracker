@@ -33,6 +33,12 @@ $Api->handlerGet("/api/user/logout/", [
     'exceptionMessage' => 'Не получилось отправить запрос',
 ]);
 
+$Api->handlerGet("/api/user/get/", [
+    'callback' => [ "\BitBalance\Api\Handler", "getUser" ],
+    'needAuth' => false,
+    'exceptionMessage' => 'Не получилось отправить запрос',
+]);
+
 $Api->handlerGet("/api/user/check_auth/", [
     'callback'         => [ "\BitBalance\Api\Handler", "checkAuth" ],
     'needAuth'         => false,//по умолчанию true
@@ -63,5 +69,27 @@ $Api->handlerGet("/api/water/get/", [
     'exceptionMessage' => 'Не получилось получить воду',
 ]);
 
+$Api->handlerPost("/api/burncalorie/add/", [
+    'callback' => [ "\BitBalance\Api\Handler", "addBurnedCalorie" ],
+    'needAuth' => false,
+    'exceptionMessage' => 'Не получилось добавить',
+]);
 
+$Api->handlerGet("/api/burncalorie/get/", [
+    'callback' => [ "\BitBalance\Api\Handler", "getBurnedCalorie" ],
+    'needAuth' => false,
+    'exceptionMessage' => 'Не получилось получить',
+]);
+
+$Api->handlerGet("/api/stat/today/get/", [
+    'callback' => [ "\BitBalance\Api\Handler", "getTodayStat" ],
+    'needAuth' => false,
+    'exceptionMessage' => 'Не получилось получить',
+]);
+
+$Api->handlerPost("/api/stat/period/get/", [
+    'callback' => [ "\BitBalance\Api\Handler", "getPeriodStat" ],
+    'needAuth' => false,
+    'exceptionMessage' => 'Не получилось получить',
+]);
 

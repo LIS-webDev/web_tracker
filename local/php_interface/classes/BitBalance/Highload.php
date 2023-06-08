@@ -57,4 +57,10 @@ class Highload {
         return $resId->getId();
     }
 
+    public function getList(array $data): \Bitrix\Main\ORM\Query\Result
+    {
+        $res = $this->getEntityDataClass()::getList($data);
+        return $res;
+    }
+
 }

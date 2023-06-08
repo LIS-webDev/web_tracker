@@ -1,1042 +1,1152 @@
-#start#---- 01.06.2023 00:11:28 ---  [1] ----
-gergreg#end#
-------------------------------------
-#start#---- 02.06.2023 00:35:09 ---  [1] ----
-BitBalance\Highload Object
-(
-    [higloadId] => 1
-)
-#end#
-------------------------------------
-#start#---- 02.06.2023 00:36:56 ---  [1] ----
-BitBalance\Highload Object
-(
-    [higloadId] => 1
-)
-#end#
-------------------------------------
-#start#---- 02.06.2023 00:37:28 ---  [1] ----
-BitBalance\Highload Object
-(
-    [higloadId] => 1
-)
-#end#
-------------------------------------
-#start#---- 02.06.2023 00:38:23 ---  [1] ----
-BitBalance\Highload Object
-(
-    [higloadId] => 1
-    [entity:BitBalance\Highload:private] => Bitrix\Main\ORM\Entity Object
-        (
-            [className:protected] => \UserTable
-            [module:protected] => 
-            [name:protected] => User
-            [connectionName:protected] => default
-            [dbTableName:protected] => b_users
-            [primary:protected] => Array
-                (
-                    [0] => ID
-                )
-
-            [autoIncrement:protected] => ID
-            [uf_id:protected] => 
-            [isUts:protected] => 
-            [isUtm:protected] => 
-            [fields:protected] => Array
-                (
-                    [ID] => Bitrix\Main\ORM\Fields\IntegerField Object
-                        (
-                            [is_primary:protected] => 1
-                            [is_unique:protected] => 
-                            [is_required:protected] => 
-                            [is_autocomplete:protected] => 1
-                            [is_private:protected] => 
-                            [is_nullable:protected] => 
-                            [column_name:protected] => ID
-                            [default_value:protected] => 
-                            [name:protected] => ID
-                            [dataType:protected] => 
-                            [initialParameters:protected] => Array
-                                (
-                                    [data_type] => integer
-                                    [primary] => 1
-                                    [autocomplete] => 1
-                                )
-
-                            [title:protected] => 
-                            [validation:protected] => 
-                            [validators:protected] => 
-                            [additionalValidators:protected] => Array
-                                (
-                                )
-
-                            [fetchDataModification:protected] => 
-                            [fetchDataModifiers:protected] => 
-                            [additionalFetchDataModifiers:protected] => Array
-                                (
-                                )
-
-                            [saveDataModification:protected] => 
-                            [saveDataModifiers:protected] => 
-                            [additionalSaveDataModifiers:protected] => Array
-                                (
-                                )
-
-                            [isSerialized:protected] => 
-                            [parentField:protected] => 
-                            [entity:protected] => Bitrix\Main\ORM\Entity Object
- *RECURSION*
-                        )
-
-                    [UF_LOGIN] => Bitrix\Main\ORM\Fields\StringField Object
-                        (
-                            [format:protected] => 
-                            [size:protected] => 
-                            [is_primary:protected] => 
-                            [is_unique:protected] => 
-                            [is_required:protected] => 1
-                            [is_autocomplete:protected] => 
-                            [is_private:protected] => 
-                            [is_nullable:protected] => 1
-                            [column_name:protected] => UF_LOGIN
-                            [default_value:protected] => 
-                            [name:protected] => UF_LOGIN
-                            [dataType:protected] => 
-                            [initialParameters:protected] => Array
-                                (
-                                    [required] => 1
-                                )
-
-                            [title:protected] => 
-                            [validation:protected] => 
-                            [validators:protected] => 
-                            [additionalValidators:protected] => Array
-                                (
-                                )
-
-                            [fetchDataModification:protected] => 
-                            [fetchDataModifiers:protected] => 
-                            [additionalFetchDataModifiers:protected] => Array
-                                (
-                                )
-
-                            [saveDataModification:protected] => 
-                            [saveDataModifiers:protected] => 
-                            [additionalSaveDataModifiers:protected] => Array
-                                (
-                                )
-
-                            [isSerialized:protected] => 
-                            [parentField:protected] => 
-                            [entity:protected] => Bitrix\Main\ORM\Entity Object
- *RECURSION*
-                        )
-
-                    [UF_PASSWORD] => Bitrix\Main\ORM\Fields\StringField Object
-                        (
-                            [format:protected] => 
-                            [size:protected] => 
-                            [is_primary:protected] => 
-                            [is_unique:protected] => 
-                            [is_required:protected] => 1
-                            [is_autocomplete:protected] => 
-                            [is_private:protected] => 
-                            [is_nullable:protected] => 1
-                            [column_name:protected] => UF_PASSWORD
-                            [default_value:protected] => 
-                            [name:protected] => UF_PASSWORD
-                            [dataType:protected] => 
-                            [initialParameters:protected] => Array
-                                (
-                                    [required] => 1
-                                )
-
-                            [title:protected] => 
-                            [validation:protected] => 
-                            [validators:protected] => 
-                            [additionalValidators:protected] => Array
-                                (
-                                )
-
-                            [fetchDataModification:protected] => 
-                            [fetchDataModifiers:protected] => 
-                            [additionalFetchDataModifiers:protected] => Array
-                                (
-                                )
-
-                            [saveDataModification:protected] => 
-                            [saveDataModifiers:protected] => 
-                            [additionalSaveDataModifiers:protected] => Array
-                                (
-                                )
-
-                            [isSerialized:protected] => 
-                            [parentField:protected] => 
-                            [entity:protected] => Bitrix\Main\ORM\Entity Object
- *RECURSION*
-                        )
-
-                )
-
-            [fieldsMap:protected] => Array
-                (
-                    [ID] => Array
-                        (
-                            [data_type] => integer
-                            [primary] => 1
-                            [autocomplete] => 1
-                        )
-
-                )
-
-            [u_fields:protected] => 
-            [code:protected] => 
-            [references:protected] => Array
-                (
-                )
-
-            [isClone:protected] => 
-        )
-
-)
-#end#
-------------------------------------
-#start#---- 02.06.2023 00:39:15 ---  [1] ----
-BitBalance\Highload Object
-(
-    [higloadId] => 1
-    [entity:BitBalance\Highload:private] => Bitrix\Main\ORM\Entity Object
-        (
-            [className:protected] => \UserTable
-            [module:protected] => 
-            [name:protected] => User
-            [connectionName:protected] => default
-            [dbTableName:protected] => b_users
-            [primary:protected] => Array
-                (
-                    [0] => ID
-                )
-
-            [autoIncrement:protected] => ID
-            [uf_id:protected] => 
-            [isUts:protected] => 
-            [isUtm:protected] => 
-            [fields:protected] => Array
-                (
-                    [ID] => Bitrix\Main\ORM\Fields\IntegerField Object
-                        (
-                            [is_primary:protected] => 1
-                            [is_unique:protected] => 
-                            [is_required:protected] => 
-                            [is_autocomplete:protected] => 1
-                            [is_private:protected] => 
-                            [is_nullable:protected] => 
-                            [column_name:protected] => ID
-                            [default_value:protected] => 
-                            [name:protected] => ID
-                            [dataType:protected] => 
-                            [initialParameters:protected] => Array
-                                (
-                                    [data_type] => integer
-                                    [primary] => 1
-                                    [autocomplete] => 1
-                                )
-
-                            [title:protected] => 
-                            [validation:protected] => 
-                            [validators:protected] => 
-                            [additionalValidators:protected] => Array
-                                (
-                                )
-
-                            [fetchDataModification:protected] => 
-                            [fetchDataModifiers:protected] => 
-                            [additionalFetchDataModifiers:protected] => Array
-                                (
-                                )
-
-                            [saveDataModification:protected] => 
-                            [saveDataModifiers:protected] => 
-                            [additionalSaveDataModifiers:protected] => Array
-                                (
-                                )
-
-                            [isSerialized:protected] => 
-                            [parentField:protected] => 
-                            [entity:protected] => Bitrix\Main\ORM\Entity Object
- *RECURSION*
-                        )
-
-                    [UF_LOGIN] => Bitrix\Main\ORM\Fields\StringField Object
-                        (
-                            [format:protected] => 
-                            [size:protected] => 
-                            [is_primary:protected] => 
-                            [is_unique:protected] => 
-                            [is_required:protected] => 1
-                            [is_autocomplete:protected] => 
-                            [is_private:protected] => 
-                            [is_nullable:protected] => 1
-                            [column_name:protected] => UF_LOGIN
-                            [default_value:protected] => 
-                            [name:protected] => UF_LOGIN
-                            [dataType:protected] => 
-                            [initialParameters:protected] => Array
-                                (
-                                    [required] => 1
-                                )
-
-                            [title:protected] => 
-                            [validation:protected] => 
-                            [validators:protected] => 
-                            [additionalValidators:protected] => Array
-                                (
-                                )
-
-                            [fetchDataModification:protected] => 
-                            [fetchDataModifiers:protected] => 
-                            [additionalFetchDataModifiers:protected] => Array
-                                (
-                                )
-
-                            [saveDataModification:protected] => 
-                            [saveDataModifiers:protected] => 
-                            [additionalSaveDataModifiers:protected] => Array
-                                (
-                                )
-
-                            [isSerialized:protected] => 
-                            [parentField:protected] => 
-                            [entity:protected] => Bitrix\Main\ORM\Entity Object
- *RECURSION*
-                        )
-
-                    [UF_PASSWORD] => Bitrix\Main\ORM\Fields\StringField Object
-                        (
-                            [format:protected] => 
-                            [size:protected] => 
-                            [is_primary:protected] => 
-                            [is_unique:protected] => 
-                            [is_required:protected] => 1
-                            [is_autocomplete:protected] => 
-                            [is_private:protected] => 
-                            [is_nullable:protected] => 1
-                            [column_name:protected] => UF_PASSWORD
-                            [default_value:protected] => 
-                            [name:protected] => UF_PASSWORD
-                            [dataType:protected] => 
-                            [initialParameters:protected] => Array
-                                (
-                                    [required] => 1
-                                )
-
-                            [title:protected] => 
-                            [validation:protected] => 
-                            [validators:protected] => 
-                            [additionalValidators:protected] => Array
-                                (
-                                )
-
-                            [fetchDataModification:protected] => 
-                            [fetchDataModifiers:protected] => 
-                            [additionalFetchDataModifiers:protected] => Array
-                                (
-                                )
-
-                            [saveDataModification:protected] => 
-                            [saveDataModifiers:protected] => 
-                            [additionalSaveDataModifiers:protected] => Array
-                                (
-                                )
-
-                            [isSerialized:protected] => 
-                            [parentField:protected] => 
-                            [entity:protected] => Bitrix\Main\ORM\Entity Object
- *RECURSION*
-                        )
-
-                )
-
-            [fieldsMap:protected] => Array
-                (
-                    [ID] => Array
-                        (
-                            [data_type] => integer
-                            [primary] => 1
-                            [autocomplete] => 1
-                        )
-
-                )
-
-            [u_fields:protected] => 
-            [code:protected] => 
-            [references:protected] => Array
-                (
-                )
-
-            [isClone:protected] => 
-        )
-
-)
-#end#
-------------------------------------
-#start#---- 02.06.2023 00:40:26 ---  [1] ----
-BitBalance\Highload Object
-(
-    [higloadId] => 1
-    [entity] => Bitrix\Main\ORM\Entity Object
-        (
-            [className:protected] => \UserTable
-            [module:protected] => 
-            [name:protected] => User
-            [connectionName:protected] => default
-            [dbTableName:protected] => b_users
-            [primary:protected] => Array
-                (
-                    [0] => ID
-                )
-
-            [autoIncrement:protected] => ID
-            [uf_id:protected] => 
-            [isUts:protected] => 
-            [isUtm:protected] => 
-            [fields:protected] => Array
-                (
-                    [ID] => Bitrix\Main\ORM\Fields\IntegerField Object
-                        (
-                            [is_primary:protected] => 1
-                            [is_unique:protected] => 
-                            [is_required:protected] => 
-                            [is_autocomplete:protected] => 1
-                            [is_private:protected] => 
-                            [is_nullable:protected] => 
-                            [column_name:protected] => ID
-                            [default_value:protected] => 
-                            [name:protected] => ID
-                            [dataType:protected] => 
-                            [initialParameters:protected] => Array
-                                (
-                                    [data_type] => integer
-                                    [primary] => 1
-                                    [autocomplete] => 1
-                                )
-
-                            [title:protected] => 
-                            [validation:protected] => 
-                            [validators:protected] => 
-                            [additionalValidators:protected] => Array
-                                (
-                                )
-
-                            [fetchDataModification:protected] => 
-                            [fetchDataModifiers:protected] => 
-                            [additionalFetchDataModifiers:protected] => Array
-                                (
-                                )
-
-                            [saveDataModification:protected] => 
-                            [saveDataModifiers:protected] => 
-                            [additionalSaveDataModifiers:protected] => Array
-                                (
-                                )
-
-                            [isSerialized:protected] => 
-                            [parentField:protected] => 
-                            [entity:protected] => Bitrix\Main\ORM\Entity Object
- *RECURSION*
-                        )
-
-                    [UF_LOGIN] => Bitrix\Main\ORM\Fields\StringField Object
-                        (
-                            [format:protected] => 
-                            [size:protected] => 
-                            [is_primary:protected] => 
-                            [is_unique:protected] => 
-                            [is_required:protected] => 1
-                            [is_autocomplete:protected] => 
-                            [is_private:protected] => 
-                            [is_nullable:protected] => 1
-                            [column_name:protected] => UF_LOGIN
-                            [default_value:protected] => 
-                            [name:protected] => UF_LOGIN
-                            [dataType:protected] => 
-                            [initialParameters:protected] => Array
-                                (
-                                    [required] => 1
-                                )
-
-                            [title:protected] => 
-                            [validation:protected] => 
-                            [validators:protected] => 
-                            [additionalValidators:protected] => Array
-                                (
-                                )
-
-                            [fetchDataModification:protected] => 
-                            [fetchDataModifiers:protected] => 
-                            [additionalFetchDataModifiers:protected] => Array
-                                (
-                                )
-
-                            [saveDataModification:protected] => 
-                            [saveDataModifiers:protected] => 
-                            [additionalSaveDataModifiers:protected] => Array
-                                (
-                                )
-
-                            [isSerialized:protected] => 
-                            [parentField:protected] => 
-                            [entity:protected] => Bitrix\Main\ORM\Entity Object
- *RECURSION*
-                        )
-
-                    [UF_PASSWORD] => Bitrix\Main\ORM\Fields\StringField Object
-                        (
-                            [format:protected] => 
-                            [size:protected] => 
-                            [is_primary:protected] => 
-                            [is_unique:protected] => 
-                            [is_required:protected] => 1
-                            [is_autocomplete:protected] => 
-                            [is_private:protected] => 
-                            [is_nullable:protected] => 1
-                            [column_name:protected] => UF_PASSWORD
-                            [default_value:protected] => 
-                            [name:protected] => UF_PASSWORD
-                            [dataType:protected] => 
-                            [initialParameters:protected] => Array
-                                (
-                                    [required] => 1
-                                )
-
-                            [title:protected] => 
-                            [validation:protected] => 
-                            [validators:protected] => 
-                            [additionalValidators:protected] => Array
-                                (
-                                )
-
-                            [fetchDataModification:protected] => 
-                            [fetchDataModifiers:protected] => 
-                            [additionalFetchDataModifiers:protected] => Array
-                                (
-                                )
-
-                            [saveDataModification:protected] => 
-                            [saveDataModifiers:protected] => 
-                            [additionalSaveDataModifiers:protected] => Array
-                                (
-                                )
-
-                            [isSerialized:protected] => 
-                            [parentField:protected] => 
-                            [entity:protected] => Bitrix\Main\ORM\Entity Object
- *RECURSION*
-                        )
-
-                )
-
-            [fieldsMap:protected] => Array
-                (
-                    [ID] => Array
-                        (
-                            [data_type] => integer
-                            [primary] => 1
-                            [autocomplete] => 1
-                        )
-
-                )
-
-            [u_fields:protected] => 
-            [code:protected] => 
-            [references:protected] => Array
-                (
-                )
-
-            [isClone:protected] => 
-        )
-
-    [entity_data_class] => \UserTable
-)
-#end#
-------------------------------------
-#start#---- 02.06.2023 00:44:43 ---  [1] ----
-BitBalance\Highload Object
-(
-    [higloadId] => 1
-    [entity] => Bitrix\Main\ORM\Entity Object
-        (
-            [className:protected] => \UserTable
-            [module:protected] => 
-            [name:protected] => User
-            [connectionName:protected] => default
-            [dbTableName:protected] => b_users
-            [primary:protected] => Array
-                (
-                    [0] => ID
-                )
-
-            [autoIncrement:protected] => ID
-            [uf_id:protected] => 
-            [isUts:protected] => 
-            [isUtm:protected] => 
-            [fields:protected] => Array
-                (
-                    [ID] => Bitrix\Main\ORM\Fields\IntegerField Object
-                        (
-                            [is_primary:protected] => 1
-                            [is_unique:protected] => 
-                            [is_required:protected] => 
-                            [is_autocomplete:protected] => 1
-                            [is_private:protected] => 
-                            [is_nullable:protected] => 
-                            [column_name:protected] => ID
-                            [default_value:protected] => 
-                            [name:protected] => ID
-                            [dataType:protected] => 
-                            [initialParameters:protected] => Array
-                                (
-                                    [data_type] => integer
-                                    [primary] => 1
-                                    [autocomplete] => 1
-                                )
-
-                            [title:protected] => 
-                            [validation:protected] => 
-                            [validators:protected] => 
-                            [additionalValidators:protected] => Array
-                                (
-                                )
-
-                            [fetchDataModification:protected] => 
-                            [fetchDataModifiers:protected] => 
-                            [additionalFetchDataModifiers:protected] => Array
-                                (
-                                )
-
-                            [saveDataModification:protected] => 
-                            [saveDataModifiers:protected] => 
-                            [additionalSaveDataModifiers:protected] => Array
-                                (
-                                )
-
-                            [isSerialized:protected] => 
-                            [parentField:protected] => 
-                            [entity:protected] => Bitrix\Main\ORM\Entity Object
- *RECURSION*
-                        )
-
-                    [UF_LOGIN] => Bitrix\Main\ORM\Fields\StringField Object
-                        (
-                            [format:protected] => 
-                            [size:protected] => 
-                            [is_primary:protected] => 
-                            [is_unique:protected] => 
-                            [is_required:protected] => 1
-                            [is_autocomplete:protected] => 
-                            [is_private:protected] => 
-                            [is_nullable:protected] => 1
-                            [column_name:protected] => UF_LOGIN
-                            [default_value:protected] => 
-                            [name:protected] => UF_LOGIN
-                            [dataType:protected] => 
-                            [initialParameters:protected] => Array
-                                (
-                                    [required] => 1
-                                )
-
-                            [title:protected] => 
-                            [validation:protected] => 
-                            [validators:protected] => 
-                            [additionalValidators:protected] => Array
-                                (
-                                )
-
-                            [fetchDataModification:protected] => 
-                            [fetchDataModifiers:protected] => 
-                            [additionalFetchDataModifiers:protected] => Array
-                                (
-                                )
-
-                            [saveDataModification:protected] => 
-                            [saveDataModifiers:protected] => 
-                            [additionalSaveDataModifiers:protected] => Array
-                                (
-                                )
-
-                            [isSerialized:protected] => 
-                            [parentField:protected] => 
-                            [entity:protected] => Bitrix\Main\ORM\Entity Object
- *RECURSION*
-                        )
-
-                    [UF_PASSWORD] => Bitrix\Main\ORM\Fields\StringField Object
-                        (
-                            [format:protected] => 
-                            [size:protected] => 
-                            [is_primary:protected] => 
-                            [is_unique:protected] => 
-                            [is_required:protected] => 1
-                            [is_autocomplete:protected] => 
-                            [is_private:protected] => 
-                            [is_nullable:protected] => 1
-                            [column_name:protected] => UF_PASSWORD
-                            [default_value:protected] => 
-                            [name:protected] => UF_PASSWORD
-                            [dataType:protected] => 
-                            [initialParameters:protected] => Array
-                                (
-                                    [required] => 1
-                                )
-
-                            [title:protected] => 
-                            [validation:protected] => 
-                            [validators:protected] => 
-                            [additionalValidators:protected] => Array
-                                (
-                                )
-
-                            [fetchDataModification:protected] => 
-                            [fetchDataModifiers:protected] => 
-                            [additionalFetchDataModifiers:protected] => Array
-                                (
-                                )
-
-                            [saveDataModification:protected] => 
-                            [saveDataModifiers:protected] => 
-                            [additionalSaveDataModifiers:protected] => Array
-                                (
-                                )
-
-                            [isSerialized:protected] => 
-                            [parentField:protected] => 
-                            [entity:protected] => Bitrix\Main\ORM\Entity Object
- *RECURSION*
-                        )
-
-                )
-
-            [fieldsMap:protected] => Array
-                (
-                    [ID] => Array
-                        (
-                            [data_type] => integer
-                            [primary] => 1
-                            [autocomplete] => 1
-                        )
-
-                )
-
-            [u_fields:protected] => 
-            [code:protected] => 
-            [references:protected] => Array
-                (
-                )
-
-            [isClone:protected] => 
-        )
-
-    [entity_data_class] => \UserTable
-)
-#end#
-------------------------------------
-#start#---- 02.06.2023 10:50:01 ---  [1] ----
-Bitrix\Main\ORM\Data\AddResult Object
-(
-    [primary:protected] => Array
-        (
-            [ID] => 12
-        )
-
-    [wereErrorsChecked:protected] => 
-    [object:protected] => EO_User Object
-        (
-            [_entity:protected] => Bitrix\Main\ORM\Entity Object
-                (
-                    [className:protected] => \UserTable
-                    [module:protected] => 
-                    [name:protected] => User
-                    [connectionName:protected] => default
-                    [dbTableName:protected] => b_users
-                    [primary:protected] => Array
-                        (
-                            [0] => ID
-                        )
-
-                    [autoIncrement:protected] => ID
-                    [uf_id:protected] => 
-                    [isUts:protected] => 
-                    [isUtm:protected] => 
-                    [fields:protected] => Array
-                        (
-                            [ID] => Bitrix\Main\ORM\Fields\IntegerField Object
-                                (
-                                    [is_primary:protected] => 1
-                                    [is_unique:protected] => 
-                                    [is_required:protected] => 
-                                    [is_autocomplete:protected] => 1
-                                    [is_private:protected] => 
-                                    [is_nullable:protected] => 
-                                    [column_name:protected] => ID
-                                    [default_value:protected] => 
-                                    [name:protected] => ID
-                                    [dataType:protected] => 
-                                    [initialParameters:protected] => Array
-                                        (
-                                            [data_type] => integer
-                                            [primary] => 1
-                                            [autocomplete] => 1
-                                        )
-
-                                    [title:protected] => 
-                                    [validation:protected] => 
-                                    [validators:protected] => 
-                                    [additionalValidators:protected] => Array
-                                        (
-                                        )
-
-                                    [fetchDataModification:protected] => 
-                                    [fetchDataModifiers:protected] => 
-                                    [additionalFetchDataModifiers:protected] => Array
-                                        (
-                                        )
-
-                                    [saveDataModification:protected] => 
-                                    [saveDataModifiers:protected] => 
-                                    [additionalSaveDataModifiers:protected] => Array
-                                        (
-                                        )
-
-                                    [isSerialized:protected] => 
-                                    [parentField:protected] => 
-                                    [entity:protected] => Bitrix\Main\ORM\Entity Object
- *RECURSION*
-                                )
-
-                            [UF_LOGIN] => Bitrix\Main\ORM\Fields\StringField Object
-                                (
-                                    [format:protected] => 
-                                    [size:protected] => 
-                                    [is_primary:protected] => 
-                                    [is_unique:protected] => 
-                                    [is_required:protected] => 1
-                                    [is_autocomplete:protected] => 
-                                    [is_private:protected] => 
-                                    [is_nullable:protected] => 1
-                                    [column_name:protected] => UF_LOGIN
-                                    [default_value:protected] => 
-                                    [name:protected] => UF_LOGIN
-                                    [dataType:protected] => 
-                                    [initialParameters:protected] => Array
-                                        (
-                                            [required] => 1
-                                        )
-
-                                    [title:protected] => 
-                                    [validation:protected] => 
-                                    [validators:protected] => 
-                                    [additionalValidators:protected] => Array
-                                        (
-                                        )
-
-                                    [fetchDataModification:protected] => 
-                                    [fetchDataModifiers:protected] => 
-                                    [additionalFetchDataModifiers:protected] => Array
-                                        (
-                                        )
-
-                                    [saveDataModification:protected] => 
-                                    [saveDataModifiers:protected] => Array
-                                        (
-                                        )
-
-                                    [additionalSaveDataModifiers:protected] => Array
-                                        (
-                                        )
-
-                                    [isSerialized:protected] => 
-                                    [parentField:protected] => 
-                                    [entity:protected] => Bitrix\Main\ORM\Entity Object
- *RECURSION*
-                                )
-
-                            [UF_PASSWORD] => Bitrix\Main\ORM\Fields\StringField Object
-                                (
-                                    [format:protected] => 
-                                    [size:protected] => 
-                                    [is_primary:protected] => 
-                                    [is_unique:protected] => 
-                                    [is_required:protected] => 1
-                                    [is_autocomplete:protected] => 
-                                    [is_private:protected] => 
-                                    [is_nullable:protected] => 1
-                                    [column_name:protected] => UF_PASSWORD
-                                    [default_value:protected] => 
-                                    [name:protected] => UF_PASSWORD
-                                    [dataType:protected] => 
-                                    [initialParameters:protected] => Array
-                                        (
-                                            [required] => 1
-                                        )
-
-                                    [title:protected] => 
-                                    [validation:protected] => 
-                                    [validators:protected] => 
-                                    [additionalValidators:protected] => Array
-                                        (
-                                        )
-
-                                    [fetchDataModification:protected] => 
-                                    [fetchDataModifiers:protected] => 
-                                    [additionalFetchDataModifiers:protected] => Array
-                                        (
-                                        )
-
-                                    [saveDataModification:protected] => 
-                                    [saveDataModifiers:protected] => Array
-                                        (
-                                        )
-
-                                    [additionalSaveDataModifiers:protected] => Array
-                                        (
-                                        )
-
-                                    [isSerialized:protected] => 
-                                    [parentField:protected] => 
-                                    [entity:protected] => Bitrix\Main\ORM\Entity Object
- *RECURSION*
-                                )
-
-                        )
-
-                    [fieldsMap:protected] => Array
-                        (
-                            [ID] => Array
-                                (
-                                    [data_type] => integer
-                                    [primary] => 1
-                                    [autocomplete] => 1
-                                )
-
-                        )
-
-                    [u_fields:protected] => 
-                    [code:protected] => 
-                    [references:protected] => Array
-                        (
-                        )
-
-                    [isClone:protected] => 
-                )
-
-            [_state:protected] => 0
-            [_actualValues:protected] => Array
-                (
-                    [ID] => 12
-                )
-
-            [_currentValues:protected] => Array
-                (
-                    [UF_LOGIN] => adminwwf
-                    [UF_PASSWORD] => $2y$10$8M2tPARqHnuX2GFd74d09eFAVh9uT8uU22oRTSRNhmeKkFtJaWTTe
-                )
-
-            [_runtimeValues:protected] => Array
-                (
-                )
-
-            [_customData:protected] => 
-            [_onPrimarySetListeners:protected] => Array
-                (
-                )
-
-            [_authContext:protected] => 
-            [_savingInProgress:protected] => 
-        )
-
-    [isSuccess:protected] => 1
-    [errors:protected] => Bitrix\Main\ErrorCollection Object
-        (
-            [values:protected] => Array
-                (
-                )
-
-        )
-
-    [data:protected] => Array
-        (
-            [UF_LOGIN] => adminwwf
-            [UF_PASSWORD] => $2y$10$8M2tPARqHnuX2GFd74d09eFAVh9uT8uU22oRTSRNhmeKkFtJaWTTe
-        )
-
-)
-#end#
-------------------------------------
-#start#---- 02.06.2023 11:09:24 ---  [1] ----
+#start#---- 08.06.2023 04:10:48 ---  [1] ----
 Array
 (
-    [LOGIN] => kekek
-    [EMAIL] => kekek@kekek.ru
-    [PASSWORD] => kekek
-    [CONFIRM_PASSWORD] => kekek
-    [ACTIVE] => Y
+    [SUM_CALORIE] => 377
+    [SUM_PROTEIN] => 25
+    [SUM_FAT] => 21
+    [SUM_CARB] => 22
+    [SUM_BURN_CALORIE] => 200
 )
 #end#
 ------------------------------------
-#start#---- 02.06.2023 11:10:46 ---  [1] ----
-#end#
-------------------------------------
-#start#---- 02.06.2023 11:13:35 ---  [1] ----
-#end#
-------------------------------------
-#start#---- 02.06.2023 11:16:10 ---  [1] ----
-#end#
-------------------------------------
-#start#---- 02.06.2023 11:17:16 ---  [1] ----
-Пользователь с логином "kekek12" уже существует.<br>#end#
-------------------------------------
-#start#---- 02.06.2023 11:17:35 ---  [1] ----
-#end#
-------------------------------------
-#start#---- 04.06.2023 12:05:06 ---  [1] ----
+#start#---- 08.06.2023 04:11:05 ---  [1] ----
 Array
 (
-    [LOGIN] => 
-    [PASSWORD] => 
-    [EMAIL] => 
+    [SUM_CALORIE] => 377
+    [SUM_PROTEIN] => 25
+    [SUM_FAT] => 21
+    [SUM_CARB] => 22
+    [SUM_BURN_CALORIE] => 200
 )
 #end#
 ------------------------------------
-#start#---- 04.06.2023 12:09:56 ---  [1] ----
-Пароль должен  быть не менее 6 символов длиной.<br>Неверный email.<br>#end#
-------------------------------------
-#start#---- 04.06.2023 12:13:47 ---  [1] ----
-#end#
-------------------------------------
-#start#---- 04.06.2023 12:14:13 ---  [1] ----
-#end#
-------------------------------------
-#start#---- 04.06.2023 13:11:12 ---  [1] ----
+#start#---- 08.06.2023 04:11:30 ---  [1] ----
 Array
 (
-    [ID] => 1
-    [UF_LOGIN] => admin
+    [SUM_CALORIE] => 377
+    [SUM_PROTEIN] => 25
+    [SUM_FAT] => 21
+    [SUM_CARB] => 22
+    [SUM_BURN_CALORIE] => 200
 )
 #end#
 ------------------------------------
-#start#---- 04.06.2023 13:19:39 ---  [1] ----
+#start#---- 08.06.2023 04:12:14 ---  [1] ----
 Array
 (
-    [ID] => 5
-    [UF_LOGIN] => admin
+    [SUM_CALORIE] => 377
+    [SUM_PROTEIN] => 25
+    [SUM_FAT] => 21
+    [SUM_CARB] => 22
+    [SUM_BURN_CALORIE] => 200
 )
 #end#
 ------------------------------------
-#start#---- 04.06.2023 17:32:59 ---  [1] ----
+#start#---- 08.06.2023 04:12:18 ---  [1] ----
+#end#
+------------------------------------
+#start#---- 08.06.2023 04:12:30 ---  [1] ----
 Array
 (
-    [ID] => 1
-    [UF_HEIGHT] => 183
+    [SUM_CALORIE] => 377
+    [SUM_PROTEIN] => 25
+    [SUM_FAT] => 21
+    [SUM_CARB] => 22
+    [SUM_BURN_CALORIE] => 200
+)
+#end#
+------------------------------------
+#start#---- 08.06.2023 04:12:34 ---  [1] ----
+Bitrix\Main\Type\Date Object
+(
+    [value:protected] => DateTime Object
+        (
+            [date] => 55399-09-07 00:00:00.000000
+            [timezone_type] => 3
+            [timezone] => Europe/Moscow
+        )
+
+)
+#end#
+------------------------------------
+#start#---- 08.06.2023 04:12:58 ---  [1] ----
+Array
+(
+    [SUM_CALORIE] => 377
+    [SUM_PROTEIN] => 25
+    [SUM_FAT] => 21
+    [SUM_CARB] => 22
+    [SUM_BURN_CALORIE] => 200
+)
+#end#
+------------------------------------
+#start#---- 08.06.2023 04:13:03 ---  [1] ----
+Bitrix\Main\Type\Date Object
+(
+    [value:protected] => DateTime Object
+        (
+            [date] => 55396-12-11 00:00:00.000000
+            [timezone_type] => 3
+            [timezone] => Europe/Moscow
+        )
+
+)
+#end#
+------------------------------------
+#start#---- 08.06.2023 04:13:33 ---  [1] ----
+Array
+(
+    [SUM_CALORIE] => 377
+    [SUM_PROTEIN] => 25
+    [SUM_FAT] => 21
+    [SUM_CARB] => 22
+    [SUM_BURN_CALORIE] => 200
+)
+#end#
+------------------------------------
+#start#---- 08.06.2023 04:13:37 ---  [1] ----
+Bitrix\Main\Type\Date Object
+(
+    [value:protected] => DateTime Object
+        (
+            [date] => 55396-12-11 00:00:00.000000
+            [timezone_type] => 3
+            [timezone] => Europe/Moscow
+        )
+
+)
+#end#
+------------------------------------
+#start#---- 08.06.2023 04:15:50 ---  [1] ----
+Array
+(
+    [SUM_CALORIE] => 377
+    [SUM_PROTEIN] => 25
+    [SUM_FAT] => 21
+    [SUM_CARB] => 22
+    [SUM_BURN_CALORIE] => 200
+)
+#end#
+------------------------------------
+#start#---- 08.06.2023 04:15:55 ---  [1] ----
+Bitrix\Main\Type\Date Object
+(
+    [value:protected] => DateTime Object
+        (
+            [date] => 55396-12-11 00:00:00.000000
+            [timezone_type] => 3
+            [timezone] => Europe/Moscow
+        )
+
+)
+#end#
+------------------------------------
+#start#---- 08.06.2023 04:16:00 ---  [1] ----
+Bitrix\Main\Type\Date Object
+(
+    [value:protected] => DateTime Object
+        (
+            [date] => 55396-12-11 00:00:00.000000
+            [timezone_type] => 3
+            [timezone] => Europe/Moscow
+        )
+
+)
+#end#
+------------------------------------
+#start#---- 08.06.2023 04:16:01 ---  [1] ----
+Bitrix\Main\Type\Date Object
+(
+    [value:protected] => DateTime Object
+        (
+            [date] => 55396-12-11 00:00:00.000000
+            [timezone_type] => 3
+            [timezone] => Europe/Moscow
+        )
+
+)
+#end#
+------------------------------------
+#start#---- 08.06.2023 04:16:05 ---  [1] ----
+Bitrix\Main\Type\Date Object
+(
+    [value:protected] => DateTime Object
+        (
+            [date] => 55399-09-07 00:00:00.000000
+            [timezone_type] => 3
+            [timezone] => Europe/Moscow
+        )
+
+)
+#end#
+------------------------------------
+#start#---- 08.06.2023 04:16:33 ---  [1] ----
+Array
+(
+    [SUM_CALORIE] => 377
+    [SUM_PROTEIN] => 25
+    [SUM_FAT] => 21
+    [SUM_CARB] => 22
+    [SUM_BURN_CALORIE] => 200
+)
+#end#
+------------------------------------
+#start#---- 08.06.2023 04:16:37 ---  [1] ----
+Bitrix\Main\Type\Date Object
+(
+    [value:protected] => DateTime Object
+        (
+            [date] => 55396-12-11 00:00:00.000000
+            [timezone_type] => 3
+            [timezone] => Europe/Moscow
+        )
+
+)
+#end#
+------------------------------------
+#start#---- 08.06.2023 04:16:39 ---  [1] ----
+Bitrix\Main\Type\Date Object
+(
+    [value:protected] => DateTime Object
+        (
+            [date] => 55396-12-11 00:00:00.000000
+            [timezone_type] => 3
+            [timezone] => Europe/Moscow
+        )
+
+)
+#end#
+------------------------------------
+#start#---- 08.06.2023 04:17:14 ---  [1] ----
+Array
+(
+    [SUM_CALORIE] => 377
+    [SUM_PROTEIN] => 25
+    [SUM_FAT] => 21
+    [SUM_CARB] => 22
+    [SUM_BURN_CALORIE] => 200
+)
+#end#
+------------------------------------
+#start#---- 08.06.2023 04:17:20 ---  [1] ----
+Bitrix\Main\Type\Date Object
+(
+    [value:protected] => DateTime Object
+        (
+            [date] => 55396-12-11 00:00:00.000000
+            [timezone_type] => 3
+            [timezone] => Europe/Moscow
+        )
+
+)
+#end#
+------------------------------------
+#start#---- 08.06.2023 04:18:46 ---  [1] ----
+Array
+(
+    [SUM_CALORIE] => 377
+    [SUM_PROTEIN] => 25
+    [SUM_FAT] => 21
+    [SUM_CARB] => 22
+    [SUM_BURN_CALORIE] => 200
+)
+#end#
+------------------------------------
+#start#---- 08.06.2023 04:18:50 ---  [1] ----
+Bitrix\Main\Type\Date Object
+(
+    [value:protected] => DateTime Object
+        (
+            [date] => 1970-01-01 00:00:00.000000
+            [timezone_type] => 3
+            [timezone] => Europe/Moscow
+        )
+
+)
+#end#
+------------------------------------
+#start#---- 08.06.2023 04:21:18 ---  [1] ----
+Array
+(
+    [SUM_CALORIE] => 377
+    [SUM_PROTEIN] => 25
+    [SUM_FAT] => 21
+    [SUM_CARB] => 22
+    [SUM_BURN_CALORIE] => 200
+)
+#end#
+------------------------------------
+#start#---- 08.06.2023 04:21:24 ---  [1] ----
+Bitrix\Main\Type\Date Object
+(
+    [value:protected] => DateTime Object
+        (
+            [date] => 2023-06-04 00:00:00.000000
+            [timezone_type] => 2
+            [timezone] => Z
+        )
+
+)
+#end#
+------------------------------------
+#start#---- 08.06.2023 04:22:28 ---  [1] ----
+Array
+(
+    [SUM_CALORIE] => 377
+    [SUM_PROTEIN] => 25
+    [SUM_FAT] => 21
+    [SUM_CARB] => 22
+    [SUM_BURN_CALORIE] => 200
+)
+#end#
+------------------------------------
+#start#---- 08.06.2023 04:22:32 ---  [1] ----
+Array
+(
+    [0] => 1
+    [1] => 2
+    [2] => 3
+)
+#end#
+------------------------------------
+#start#---- 08.06.2023 04:35:26 ---  [1] ----
+Array
+(
+    [SUM_CALORIE] => 377
+    [SUM_PROTEIN] => 25
+    [SUM_FAT] => 21
+    [SUM_CARB] => 22
+    [SUM_BURN_CALORIE] => 200
+)
+#end#
+------------------------------------
+#start#---- 08.06.2023 04:35:32 ---  [1] ----
+0#end#
+------------------------------------
+#start#---- 08.06.2023 04:35:50 ---  [1] ----
+Array
+(
+    [SUM_CALORIE] => 377
+    [SUM_PROTEIN] => 25
+    [SUM_FAT] => 21
+    [SUM_CARB] => 22
+    [SUM_BURN_CALORIE] => 200
+)
+#end#
+------------------------------------
+#start#---- 08.06.2023 04:35:57 ---  [1] ----
+432000#end#
+------------------------------------
+#start#---- 08.06.2023 04:36:38 ---  [1] ----
+Array
+(
+    [SUM_CALORIE] => 377
+    [SUM_PROTEIN] => 25
+    [SUM_FAT] => 21
+    [SUM_CARB] => 22
+    [SUM_BURN_CALORIE] => 200
+)
+#end#
+------------------------------------
+#start#---- 08.06.2023 04:36:43 ---  [1] ----
+432#end#
+------------------------------------
+#start#---- 08.06.2023 04:39:29 ---  [1] ----
+Array
+(
+    [SUM_CALORIE] => 377
+    [SUM_PROTEIN] => 25
+    [SUM_FAT] => 21
+    [SUM_CARB] => 22
+    [SUM_BURN_CALORIE] => 200
+)
+#end#
+------------------------------------
+#start#---- 08.06.2023 04:39:34 ---  [1] ----
+345.6#end#
+------------------------------------
+#start#---- 08.06.2023 04:40:23 ---  [1] ----
+Array
+(
+    [SUM_CALORIE] => 377
+    [SUM_PROTEIN] => 25
+    [SUM_FAT] => 21
+    [SUM_CARB] => 22
+    [SUM_BURN_CALORIE] => 200
+)
+#end#
+------------------------------------
+#start#---- 08.06.2023 04:40:28 ---  [1] ----
+432#end#
+------------------------------------
+#start#---- 08.06.2023 04:40:58 ---  [1] ----
+Array
+(
+    [SUM_CALORIE] => 377
+    [SUM_PROTEIN] => 25
+    [SUM_FAT] => 21
+    [SUM_CARB] => 22
+    [SUM_BURN_CALORIE] => 200
+)
+#end#
+------------------------------------
+#start#---- 08.06.2023 04:41:02 ---  [1] ----
+432#end#
+------------------------------------
+#start#---- 08.06.2023 04:42:39 ---  [1] ----
+Array
+(
+    [SUM_CALORIE] => 377
+    [SUM_PROTEIN] => 25
+    [SUM_FAT] => 21
+    [SUM_CARB] => 22
+    [SUM_BURN_CALORIE] => 200
+)
+#end#
+------------------------------------
+#start#---- 08.06.2023 04:42:45 ---  [1] ----
+5#end#
+------------------------------------
+#start#---- 08.06.2023 04:45:45 ---  [1] ----
+Array
+(
+    [SUM_CALORIE] => 377
+    [SUM_PROTEIN] => 25
+    [SUM_FAT] => 21
+    [SUM_CARB] => 22
+    [SUM_BURN_CALORIE] => 200
+)
+#end#
+------------------------------------
+#start#---- 08.06.2023 04:46:35 ---  [1] ----
+Array
+(
+    [SUM_CALORIE] => 377
+    [SUM_PROTEIN] => 25
+    [SUM_FAT] => 21
+    [SUM_CARB] => 22
+    [SUM_BURN_CALORIE] => 200
+)
+#end#
+------------------------------------
+#start#---- 08.06.2023 04:47:40 ---  [1] ----
+Array
+(
+    [SUM_CALORIE] => 377
+    [SUM_PROTEIN] => 25
+    [SUM_FAT] => 21
+    [SUM_CARB] => 22
+    [SUM_BURN_CALORIE] => 200
+)
+#end#
+------------------------------------
+#start#---- 08.06.2023 04:47:45 ---  [1] ----
+5#end#
+------------------------------------
+#start#---- 08.06.2023 04:50:45 ---  [1] ----
+Array
+(
+    [SUM_CALORIE] => 377
+    [SUM_PROTEIN] => 25
+    [SUM_FAT] => 21
+    [SUM_CARB] => 22
+    [SUM_BURN_CALORIE] => 200
+)
+#end#
+------------------------------------
+#start#---- 08.06.2023 04:50:50 ---  [1] ----
+Array
+(
+    [04.06.2023] => 
+    [05.06.2023] => 
+    [06.06.2023] => 
+    [07.06.2023] => 
+    [08.06.2023] => 377
+)
+#end#
+------------------------------------
+#start#---- 08.06.2023 04:50:50 ---  [1] ----
+Array
+(
+    [04.06.2023] => 
+    [05.06.2023] => 
+    [06.06.2023] => 
+    [07.06.2023] => 
+    [08.06.2023] => 377
+)
+#end#
+------------------------------------
+#start#---- 08.06.2023 04:53:50 ---  [1] ----
+Array
+(
+    [SUM_CALORIE] => 377
+    [SUM_PROTEIN] => 25
+    [SUM_FAT] => 21
+    [SUM_CARB] => 22
+    [SUM_BURN_CALORIE] => 200
+)
+#end#
+------------------------------------
+#start#---- 08.06.2023 04:54:00 ---  [1] ----
+Array
+(
+    [04.06.2023] => 
+    [05.06.2023] => 
+    [06.06.2023] => 
+    [07.06.2023] => 
+    [08.06.2023] => 377
+)
+#end#
+------------------------------------
+#start#---- 08.06.2023 04:54:23 ---  [1] ----
+Array
+(
+    [SUM_CALORIE] => 377
+    [SUM_PROTEIN] => 25
+    [SUM_FAT] => 21
+    [SUM_CARB] => 22
+    [SUM_BURN_CALORIE] => 200
+)
+#end#
+------------------------------------
+#start#---- 08.06.2023 04:54:28 ---  [1] ----
+Array
+(
+    [04.06.2023] => 
+    [05.06.2023] => 
+    [06.06.2023] => 
+    [07.06.2023] => 
+    [08.06.2023] => 377
+)
+#end#
+------------------------------------
+#start#---- 08.06.2023 04:55:27 ---  [1] ----
+Array
+(
+    [SUM_CALORIE] => 377
+    [SUM_PROTEIN] => 25
+    [SUM_FAT] => 21
+    [SUM_CARB] => 22
+    [SUM_BURN_CALORIE] => 200
+)
+#end#
+------------------------------------
+#start#---- 08.06.2023 04:55:34 ---  [1] ----
+Array
+(
+    [04.06.2023] => 
+    [05.06.2023] => 
+    [06.06.2023] => 
+    [07.06.2023] => 
+    [08.06.2023] => 377
+)
+#end#
+------------------------------------
+#start#---- 08.06.2023 04:55:55 ---  [1] ----
+Array
+(
+    [SUM_CALORIE] => 377
+    [SUM_PROTEIN] => 25
+    [SUM_FAT] => 21
+    [SUM_CARB] => 22
+    [SUM_BURN_CALORIE] => 200
+)
+#end#
+------------------------------------
+#start#---- 08.06.2023 04:56:16 ---  [1] ----
+Array
+(
+    [SUM_CALORIE] => 377
+    [SUM_PROTEIN] => 25
+    [SUM_FAT] => 21
+    [SUM_CARB] => 22
+    [SUM_BURN_CALORIE] => 200
+)
+#end#
+------------------------------------
+#start#---- 08.06.2023 04:56:23 ---  [1] ----
+Array
+(
+    [04.06.2023] => 
+    [05.06.2023] => 
+    [06.06.2023] => 
+    [07.06.2023] => 
+    [08.06.2023] => 377
+)
+#end#
+------------------------------------
+#start#---- 08.06.2023 04:57:40 ---  [1] ----
+Array
+(
+    [SUM_CALORIE] => 377
+    [SUM_PROTEIN] => 25
+    [SUM_FAT] => 21
+    [SUM_CARB] => 22
+    [SUM_BURN_CALORIE] => 200
+)
+#end#
+------------------------------------
+#start#---- 08.06.2023 04:57:45 ---  [1] ----
+Array
+(
+    [04.06.2023] => 
+    [05.06.2023] => 
+    [06.06.2023] => 
+    [07.06.2023] => 
+    [08.06.2023] => 377
+)
+#end#
+------------------------------------
+#start#---- 08.06.2023 04:58:44 ---  [1] ----
+Array
+(
+    [SUM_CALORIE] => 377
+    [SUM_PROTEIN] => 25
+    [SUM_FAT] => 21
+    [SUM_CARB] => 22
+    [SUM_BURN_CALORIE] => 200
+)
+#end#
+------------------------------------
+#start#---- 08.06.2023 04:58:50 ---  [1] ----
+Array
+(
+    [04.06.2023] => 
+    [05.06.2023] => 
+    [06.06.2023] => 
+    [07.06.2023] => 
+    [08.06.2023] => 377
+)
+#end#
+------------------------------------
+#start#---- 08.06.2023 04:59:34 ---  [1] ----
+Array
+(
+    [SUM_CALORIE] => 377
+    [SUM_PROTEIN] => 25
+    [SUM_FAT] => 21
+    [SUM_CARB] => 22
+    [SUM_BURN_CALORIE] => 200
+)
+#end#
+------------------------------------
+#start#---- 08.06.2023 04:59:39 ---  [1] ----
+Array
+(
+    [04.06.2023] => 
+    [05.06.2023] => 
+    [06.06.2023] => 
+    [07.06.2023] => 
+    [08.06.2023] => 377
+)
+#end#
+------------------------------------
+#start#---- 08.06.2023 04:59:43 ---  [1] ----
+Array
+(
+    [04.06.2023] => 
+    [05.06.2023] => 
+    [06.06.2023] => 
+    [07.06.2023] => 
+    [08.06.2023] => 377
+)
+#end#
+------------------------------------
+#start#---- 08.06.2023 04:59:53 ---  [1] ----
+Array
+(
+    [SUM_CALORIE] => 377
+    [SUM_PROTEIN] => 25
+    [SUM_FAT] => 21
+    [SUM_CARB] => 22
+    [SUM_BURN_CALORIE] => 200
+)
+#end#
+------------------------------------
+#start#---- 08.06.2023 05:00:01 ---  [1] ----
+Array
+(
+    [04.06.2023] => 
+    [05.06.2023] => 
+    [06.06.2023] => 
+    [07.06.2023] => 
+    [08.06.2023] => 377
+)
+#end#
+------------------------------------
+#start#---- 08.06.2023 05:00:22 ---  [1] ----
+Array
+(
+    [SUM_CALORIE] => 377
+    [SUM_PROTEIN] => 25
+    [SUM_FAT] => 21
+    [SUM_CARB] => 22
+    [SUM_BURN_CALORIE] => 200
+)
+#end#
+------------------------------------
+#start#---- 08.06.2023 05:00:29 ---  [1] ----
+Array
+(
+    [04.06.2023] => 
+    [05.06.2023] => 
+    [06.06.2023] => 
+    [07.06.2023] => 
+    [08.06.2023] => 377
+)
+#end#
+------------------------------------
+#start#---- 08.06.2023 05:01:05 ---  [1] ----
+Array
+(
+    [SUM_CALORIE] => 377
+    [SUM_PROTEIN] => 25
+    [SUM_FAT] => 21
+    [SUM_CARB] => 22
+    [SUM_BURN_CALORIE] => 200
+)
+#end#
+------------------------------------
+#start#---- 08.06.2023 05:01:10 ---  [1] ----
+Array
+(
+    [04.06.2023] => 
+    [05.06.2023] => 
+    [06.06.2023] => 
+    [07.06.2023] => 
+    [08.06.2023] => 377
+)
+#end#
+------------------------------------
+#start#---- 08.06.2023 05:01:29 ---  [1] ----
+Array
+(
+    [SUM_CALORIE] => 377
+    [SUM_PROTEIN] => 25
+    [SUM_FAT] => 21
+    [SUM_CARB] => 22
+    [SUM_BURN_CALORIE] => 200
+)
+#end#
+------------------------------------
+#start#---- 08.06.2023 05:01:35 ---  [1] ----
+Array
+(
+    [04.06.2023] => 
+    [05.06.2023] => 
+    [06.06.2023] => 
+    [07.06.2023] => 
+    [08.06.2023] => 377
+)
+#end#
+------------------------------------
+#start#---- 08.06.2023 05:01:56 ---  [1] ----
+Array
+(
+    [SUM_CALORIE] => 377
+    [SUM_PROTEIN] => 25
+    [SUM_FAT] => 21
+    [SUM_CARB] => 22
+    [SUM_BURN_CALORIE] => 200
+)
+#end#
+------------------------------------
+#start#---- 08.06.2023 05:02:02 ---  [1] ----
+Array
+(
+    [04.06.2023] => 
+    [05.06.2023] => 
+    [06.06.2023] => 
+    [07.06.2023] => 
+    [08.06.2023] => 377
+)
+#end#
+------------------------------------
+#start#---- 08.06.2023 05:06:45 ---  [1] ----
+Array
+(
+    [SUM_CALORIE] => 377
+    [SUM_PROTEIN] => 25
+    [SUM_FAT] => 21
+    [SUM_CARB] => 22
+    [SUM_BURN_CALORIE] => 200
+)
+#end#
+------------------------------------
+#start#---- 08.06.2023 05:07:02 ---  [1] ----
+Array
+(
+    [SUM_CALORIE] => 377
+    [SUM_PROTEIN] => 25
+    [SUM_FAT] => 21
+    [SUM_CARB] => 22
+    [SUM_BURN_CALORIE] => 200
+)
+#end#
+------------------------------------
+#start#---- 08.06.2023 05:07:08 ---  [1] ----
+Array
+(
+    [04.06.2023] => 
+    [05.06.2023] => 
+    [06.06.2023] => 
+    [07.06.2023] => 
+    [08.06.2023] => 377
+)
+#end#
+------------------------------------
+#start#---- 08.06.2023 05:07:39 ---  [1] ----
+Array
+(
+    [SUM_CALORIE] => 377
+    [SUM_PROTEIN] => 25
+    [SUM_FAT] => 21
+    [SUM_CARB] => 22
+    [SUM_BURN_CALORIE] => 200
+)
+#end#
+------------------------------------
+#start#---- 08.06.2023 05:07:46 ---  [1] ----
+Array
+(
+    [04.06.2023] => 
+    [05.06.2023] => 
+    [06.06.2023] => 
+    [07.06.2023] => 
+    [08.06.2023] => 377
+)
+#end#
+------------------------------------
+#start#---- 08.06.2023 05:07:52 ---  [1] ----
+Array
+(
+    [04.06.2023] => 
+    [05.06.2023] => 
+    [06.06.2023] => 
+    [07.06.2023] => 
+    [08.06.2023] => 377
+)
+#end#
+------------------------------------
+#start#---- 08.06.2023 05:09:34 ---  [1] ----
+Array
+(
+    [SUM_CALORIE] => 377
+    [SUM_PROTEIN] => 25
+    [SUM_FAT] => 21
+    [SUM_CARB] => 22
+    [SUM_BURN_CALORIE] => 200
+)
+#end#
+------------------------------------
+#start#---- 08.06.2023 05:12:47 ---  [1] ----
+Array
+(
+    [SUM_CALORIE] => 377
+    [SUM_PROTEIN] => 25
+    [SUM_FAT] => 21
+    [SUM_CARB] => 22
+    [SUM_BURN_CALORIE] => 200
+)
+#end#
+------------------------------------
+#start#---- 08.06.2023 05:12:52 ---  [1] ----
+Array
+(
+    [04.06.2023] => 
+    [05.06.2023] => 
+    [06.06.2023] => 
+    [07.06.2023] => 
+    [08.06.2023] => 377
+)
+#end#
+------------------------------------
+#start#---- 08.06.2023 05:13:08 ---  [1] ----
+Array
+(
+    [04.06.2023] => 
+    [05.06.2023] => 
+    [06.06.2023] => 
+    [07.06.2023] => 
+    [08.06.2023] => 377
+)
+#end#
+------------------------------------
+#start#---- 08.06.2023 05:13:12 ---  [1] ----
+Array
+(
+    [06.06.2023] => 
+)
+#end#
+------------------------------------
+#start#---- 08.06.2023 05:14:21 ---  [1] ----
+Array
+(
+    [SUM_CALORIE] => 377
+    [SUM_PROTEIN] => 25
+    [SUM_FAT] => 21
+    [SUM_CARB] => 22
+    [SUM_BURN_CALORIE] => 200
+)
+#end#
+------------------------------------
+#start#---- 08.06.2023 05:14:29 ---  [1] ----
+Array
+(
+    [07.06.2023] => 
+    [08.06.2023] => 377
+)
+#end#
+------------------------------------
+#start#---- 08.06.2023 05:15:02 ---  [1] ----
+Array
+(
+    [SUM_CALORIE] => 377
+    [SUM_PROTEIN] => 25
+    [SUM_FAT] => 21
+    [SUM_CARB] => 22
+    [SUM_BURN_CALORIE] => 200
+)
+#end#
+------------------------------------
+#start#---- 08.06.2023 05:15:18 ---  [1] ----
+Array
+(
+    [SUM_CALORIE] => 377
+    [SUM_PROTEIN] => 25
+    [SUM_FAT] => 21
+    [SUM_CARB] => 22
+    [SUM_BURN_CALORIE] => 200
+)
+#end#
+------------------------------------
+#start#---- 08.06.2023 05:15:31 ---  [1] ----
+Array
+(
+    [SUM_CALORIE] => 377
+    [SUM_PROTEIN] => 25
+    [SUM_FAT] => 21
+    [SUM_CARB] => 22
+    [SUM_BURN_CALORIE] => 200
+)
+#end#
+------------------------------------
+#start#---- 08.06.2023 05:15:56 ---  [1] ----
+Array
+(
+    [SUM_CALORIE] => 377
+    [SUM_PROTEIN] => 25
+    [SUM_FAT] => 21
+    [SUM_CARB] => 22
+    [SUM_BURN_CALORIE] => 200
+)
+#end#
+------------------------------------
+#start#---- 08.06.2023 05:16:06 ---  [1] ----
+Array
+(
+    [SUM_CALORIE] => 377
+    [SUM_PROTEIN] => 25
+    [SUM_FAT] => 21
+    [SUM_CARB] => 22
+    [SUM_BURN_CALORIE] => 200
+)
+#end#
+------------------------------------
+#start#---- 08.06.2023 05:16:11 ---  [1] ----
+Array
+(
+    [06.06.2023] => 
+    [07.06.2023] => 
+    [08.06.2023] => 377
+    [09.06.2023] => 
+)
+#end#
+------------------------------------
+#start#---- 08.06.2023 05:16:13 ---  [1] ----
+Array
+(
+    [06.06.2023] => 
+    [07.06.2023] => 
+    [08.06.2023] => 377
+    [09.06.2023] => 
+)
+#end#
+------------------------------------
+#start#---- 08.06.2023 05:16:13 ---  [1] ----
+Array
+(
+    [06.06.2023] => 
+    [07.06.2023] => 
+    [08.06.2023] => 377
+    [09.06.2023] => 
+)
+#end#
+------------------------------------
+#start#---- 08.06.2023 05:16:14 ---  [1] ----
+Array
+(
+    [06.06.2023] => 
+    [07.06.2023] => 
+    [08.06.2023] => 377
+    [09.06.2023] => 
+)
+#end#
+------------------------------------
+#start#---- 08.06.2023 05:16:14 ---  [1] ----
+Array
+(
+    [06.06.2023] => 
+    [07.06.2023] => 
+    [08.06.2023] => 377
+    [09.06.2023] => 
+)
+#end#
+------------------------------------
+#start#---- 08.06.2023 05:16:14 ---  [1] ----
+Array
+(
+    [06.06.2023] => 
+    [07.06.2023] => 
+    [08.06.2023] => 377
+    [09.06.2023] => 
+)
+#end#
+------------------------------------
+#start#---- 08.06.2023 05:16:15 ---  [1] ----
+Array
+(
+    [06.06.2023] => 
+    [07.06.2023] => 
+    [08.06.2023] => 377
+    [09.06.2023] => 
+)
+#end#
+------------------------------------
+#start#---- 08.06.2023 05:16:15 ---  [1] ----
+Array
+(
+    [06.06.2023] => 
+    [07.06.2023] => 
+    [08.06.2023] => 377
+    [09.06.2023] => 
+)
+#end#
+------------------------------------
+#start#---- 08.06.2023 05:16:16 ---  [1] ----
+Array
+(
+    [06.06.2023] => 
+    [07.06.2023] => 
+    [08.06.2023] => 377
+    [09.06.2023] => 
+)
+#end#
+------------------------------------
+#start#---- 08.06.2023 05:18:12 ---  [1] ----
+Array
+(
+    [SUM_CALORIE] => 377
+    [SUM_PROTEIN] => 25
+    [SUM_FAT] => 21
+    [SUM_CARB] => 22
+    [SUM_BURN_CALORIE] => 200
+)
+#end#
+------------------------------------
+#start#---- 08.06.2023 05:18:26 ---  [1] ----
+Array
+(
+    [SUM_CALORIE] => 377
+    [SUM_PROTEIN] => 25
+    [SUM_FAT] => 21
+    [SUM_CARB] => 22
+    [SUM_BURN_CALORIE] => 200
+)
+#end#
+------------------------------------
+#start#---- 08.06.2023 05:18:32 ---  [1] ----
+Array
+(
+    [06.06.2023] => 
+    [07.06.2023] => 
+    [08.06.2023] => 377
+    [09.06.2023] => 
+)
+#end#
+------------------------------------
+#start#---- 08.06.2023 05:18:37 ---  [1] ----
+Array
+(
+    [06.06.2023] => 
+    [07.06.2023] => 
+    [08.06.2023] => 377
+    [09.06.2023] => 
+)
+#end#
+------------------------------------
+#start#---- 08.06.2023 05:18:37 ---  [1] ----
+Array
+(
+    [06.06.2023] => 
+    [07.06.2023] => 
+    [08.06.2023] => 377
+    [09.06.2023] => 
+)
+#end#
+------------------------------------
+#start#---- 08.06.2023 05:19:45 ---  [1] ----
+Array
+(
+    [SUM_CALORIE] => 377
+    [SUM_PROTEIN] => 25
+    [SUM_FAT] => 21
+    [SUM_CARB] => 22
+    [SUM_BURN_CALORIE] => 200
+)
+#end#
+------------------------------------
+#start#---- 08.06.2023 05:20:27 ---  [1] ----
+Array
+(
+    [SUM_CALORIE] => 377
+    [SUM_PROTEIN] => 25
+    [SUM_FAT] => 21
+    [SUM_CARB] => 22
+    [SUM_BURN_CALORIE] => 200
+)
+#end#
+------------------------------------
+#start#---- 08.06.2023 05:21:01 ---  [1] ----
+Array
+(
+    [SUM_CALORIE] => 377
+    [SUM_PROTEIN] => 25
+    [SUM_FAT] => 21
+    [SUM_CARB] => 22
+    [SUM_BURN_CALORIE] => 200
+)
+#end#
+------------------------------------
+#start#---- 08.06.2023 05:21:24 ---  [1] ----
+Array
+(
+    [SUM_CALORIE] => 377
+    [SUM_PROTEIN] => 25
+    [SUM_FAT] => 21
+    [SUM_CARB] => 22
+    [SUM_BURN_CALORIE] => 200
+)
+#end#
+------------------------------------
+#start#---- 08.06.2023 05:21:30 ---  [1] ----
+Array
+(
+    [05.06.2023] => 
+    [06.06.2023] => 
+    [07.06.2023] => 
+    [08.06.2023] => 377
+    [09.06.2023] => 
 )
 #end#
 ------------------------------------

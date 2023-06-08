@@ -95,6 +95,7 @@ export default defineComponent({
           BMR += 300;
           break;
       }
+      this.$store.commit('setTotalCalorie', BMR);
       return BMR;
     },
     proteinCount() {
@@ -153,8 +154,31 @@ export default defineComponent({
   },
   methods: {
     updateProfile() {
+      let goal;
+      switch (this.goal) {
+        case 'less':
+          goal = 'Похудение';
+          break;
+        case 'stay':
+          goal = 'Поддержание веса';
+          break;
+        case 'up':
+          goal = 'Набор массы';
+          break;
+      }
         let user = {},
-            userSettings = {};
+            userSettings = {
+              "UF_PROTEIN": this.proteinCount,
+              "UF_FAT": this.fatCount,
+              "UF_CARB": this.carbCount,
+              "UF_CALORIE": this.calorieCount,
+              "UF_HEIGHT": this.height,
+              "UF_WEIGHT": this.weight,
+              "UF_AGE": this.age,
+              "UF_WATER": this.waterCount,
+              "UF_GOAL": goal,
+              "UF_FOREIGN_KEY_PHYSICAL_TYPE": this.activity
+            };
         if (this.login) {
           user['LOGIN'] = this.login;
         } else {
@@ -166,9 +190,6 @@ export default defineComponent({
         if (this.email) {
           user['EMAIL'] = this.email;
         }
-        // if (this.calorieCount) {
-          // userSettings['UF_'] =
-        // }
         fetch('/api/user/update/',{
           method: 'POST',
           body: JSON.stringify({
@@ -193,8 +214,23 @@ export default defineComponent({
       fetch('/api/user/get/')
           .then(response => response.json())
           .then(result => {
-            this.login = result.data.UF_LOGIN;
-            this.email = result.data.UF_EMAIL;
+            this.login = result.data.user.UF_LOGIN;
+            this.email = result.data.user.UF_EMAIL;
+            this.age = result.data.user_settings.UF_AGE;
+            this.height = result.data.user_settings.UF_HEIGHT;
+            this.weight = result.data.user_settings.UF_WEIGHT;
+            this.activity = result.data.user_settings.USER_SETTINGS_PhysicalType_UF_KOEF;
+            switch (result.data.user_settings.UF_GOAL) {
+              case 'Похудение':
+                this.goal = 'less';
+                break;
+              case 'Поддержание веса':
+                this.goal = 'stay';
+                break;
+              case 'Набор массы':
+                this.goal = 'up';
+                break;
+            }
           });
     },
   },

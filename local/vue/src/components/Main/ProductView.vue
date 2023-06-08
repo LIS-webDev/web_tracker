@@ -7,27 +7,27 @@
             <form id="product" action="" @submit.prevent="addProduct">
               <div class="default__input-row">
                 <label class="default-label" for="product-name">Название:</label>
-                <input v-model.trim="name" class="default-input" id="product-name" type="text" name="name">
+                <input required v-model.trim="name" class="default-input" id="product-name" type="text" name="name">
               </div>
               <div class="default__input-row">
                 <label class="default-label" for="product-protein">Белки(гр.):</label>
-                <input v-model.trim="protein" @keypress="isNumber" class="default-input" id="product-protein" type="text" name="protein">
+                <input required v-model.trim="protein" @keypress="isNumber" class="default-input" id="product-protein" type="text" name="protein">
               </div>
               <div class="default__input-row">
                 <label class="default-label" for="product-fat">Жиры(гр.):</label>
-                <input v-model.trim="fat" @keypress="isNumber" class="default-input" id="product-fat" type="text" name="fat">
+                <input required v-model.trim="fat" @keypress="isNumber" class="default-input" id="product-fat" type="text" name="fat">
               </div>
               <div class="default__input-row">
                 <label class="default-label" for="product-carb">Углеводы(гр.):</label>
-                <input v-model.trim="carb" @keypress="isNumber" class="default-input" id="product-carb" type="text" name="carb">
+                <input required v-model.trim="carb" @keypress="isNumber" class="default-input" id="product-carb" type="text" name="carb">
               </div>
               <div class="default__input-row">
                 <label class="default-label" for="product-count">Количество(гр.):</label>
-                <input v-model.trim="count" @keypress="isNumber" class="default-input" id="product-count" type="text" name="count">
+                <input required v-model.trim="count" @keypress="isNumber" class="default-input" id="product-count" type="text" name="count">
               </div>
               <div class="default__input-row">
                 <label class="default-label" for="user-profile-meal">Прием пищи:</label>
-                <select class="default-select" id="user-profile-meal" v-model="meal" name="meal">
+                <select required class="default-select" id="user-profile-meal" v-model="meal" name="meal">
                   <option disabled value="">Выберите прием пищи</option>
                   <option value="Завтрак">Завтрак</option>
                   <option value="Обед">Обед</option>
@@ -36,7 +36,7 @@
                 </select>
               </div>
               <h3 class="product__sub-title sub-title">Количество белков, жиров и углеводов указывается на 100 грамм продукта<span>*</span></h3>
-              <button class="product__submit-btn default-submit-btn center-btn">Добавить</button>
+              <button class="product__submit-btn default-submit-btn center-btn" :disabled="btn.disabled">{{btn.text}}</button>
             </form>
           </div>
           <div class="product__column">
@@ -65,7 +65,11 @@ export default defineComponent({
       protein: "",
       fat: "",
       carb: "",
-      meal: ""
+      meal: "",
+      btn: {
+        text: "Добавить",
+        disabled: false
+      }
     }
   },
   computed: {
@@ -75,7 +79,28 @@ export default defineComponent({
   },
   methods: {
     addProduct() {
-
+      this.$store.commit('addCalorie', this.calorieCount);
+      this.btn.text = 'Добавлено';
+      this.btn.disabled = true;
+      fetch('/api/product/add/', {
+        method: 'POST',
+        body: JSON.stringify({
+          product: {
+            name: this.name,
+            calorie: this.calorieCount,
+            count: this.count,
+            protein: this.protein,
+            fat: this.fat,
+            carb: this.carb,
+            meal: this.meal,
+          }
+        })
+      }).then(response => response.json())
+          .then(result => {
+            console.log(result);
+            this.btn.text = 'Добавить';
+            this.btn.disabled = false;
+          })
     },
     isNumber(event) {
       let charCode =  event.keyCode;
@@ -84,7 +109,7 @@ export default defineComponent({
       } else {
         return true;
       }
-    }
+    },
   }
 });
 </script>

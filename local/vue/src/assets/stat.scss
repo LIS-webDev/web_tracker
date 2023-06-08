@@ -1,6 +1,14 @@
 .stat {
+  width: 100%;
   &__title {
     margin-bottom: 2rem;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
   }
 
   &__date-picker {
@@ -9,5 +17,7 @@
 
   &__date-picker-wrapper {
     margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: center;
   }
 }

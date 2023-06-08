@@ -11,6 +11,7 @@ use BitBalance\VueFiles;
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?=$APPLICATION->ShowTitle();?></title>
     <?php $APPLICATION->ShowHead();?>
+    <link rel="stylesheet" href="//unpkg.com/element-plus/dist/index.css" />
     <?php
     Asset::getInstance()->addCss(SITE_TEMPLATE_PATH."/styles/fonts.css");
     Asset::getInstance()->addCss(SITE_TEMPLATE_PATH."/styles/null.css");
@@ -22,7 +23,7 @@ use BitBalance\VueFiles;
 </head>
 <?php $APPLICATION->ShowPanel();?>
 <body>
-<div id="app" class="app">
+<div v-cloak id="app" class="app">
     <aside class="aside">
         <div class="aside__content-wrapper">
             <div class="aside__content">
