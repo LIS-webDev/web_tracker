@@ -5,71 +5,9 @@
       <div class="stat-today__wrapper">
         <h1 class="stat-today__title title">Ваша статистика за сегодняшний день</h1>
         <div class="stat-today__columns">
-          <div class="stat-today__column">
-            <div class="stat-today__table">
-              <div class="stat-today__table-column">
-                <div class="stat-today__table-title small-title">Завтрак</div>
-                <div class="stat-today__table-column-items">
-                  <div class="stat-today__table-column-item">
-                    <ul>
-                      <li>Гречка</li>
-                      <li>Белки: 10г.</li>
-                      <li>Жиры: 10г.</li>
-                      <li>Углеводы: 10г.</li>
-                      <li>Вес: 100гр.</li>
-                      <li>Калории: 100 ккал</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="stat-today__table-column">
-                <div class="stat-today__table-title small-title">Обед</div>
-                <div class="stat-today__table-column-items">
-                  <div class="stat-today__table-column-item">
-                    <ul>
-                      <li>Гречка</li>
-                      <li>Белки: 10г.</li>
-                      <li>Жиры: 10г.</li>
-                      <li>Углеводы: 10г.</li>
-                      <li>Вес: 100гр.</li>
-                      <li>Калории: 100 ккал</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="stat-today__table-column">
-                <div class="stat-today__table-title small-title">Ужин</div>
-                <div class="stat-today__table-column-items">
-                  <div class="stat-today__table-column-item">
-                    <ul>
-                      <li>Гречка</li>
-                      <li>Белки: 10г.</li>
-                      <li>Жиры: 10г.</li>
-                      <li>Углеводы: 10г.</li>
-                      <li>Вес: 100гр.</li>
-                      <li>Калории: 100 ккал</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="stat-today__table-column">
-                <div class="stat-today__table-title small-title">Перекус</div>
-                <div class="stat-today__table-column-items">
-                  <div class="stat-today__table-column-item">
-                    <ul>
-                      <li>Гречка</li>
-                      <li>Белки: 10г.</li>
-                      <li>Жиры: 10г.</li>
-                      <li>Углеводы: 10г.</li>
-                      <li>Вес: 100гр.</li>
-                      <li>Калории: 100 ккал</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div v-if="false" class="stat-today__column">
           </div>
-          <div class="stat-today__column">
+          <div class="stat-today__column custom-column">
             <el-progress type="circle" :stroke-width="16" :width="200" :percentage="percentCalorie" >
               <span>{{calorieCount}}</span>
             </el-progress>

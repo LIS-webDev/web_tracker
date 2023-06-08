@@ -34,6 +34,7 @@ export default defineComponent({
   },
   methods: {
      sendForm() {
+       let el = this;
        fetch('/api/user/auth/', {
          method: "POST",
          body: JSON.stringify({
@@ -52,11 +53,13 @@ export default defineComponent({
             this.error = true;
             break;
         }
-        console.log(result.data);
         if (!this.error) {
-          this.$store.state.userId = result.data.user_id;
-          this.$store.state.userLogin = result.data.login;
-          this.$router.push({name: 'HomeView'});
+          el.$store.commit('setUserLogin', result.data.login);
+          el.$store.commit('setUserID', result.data.user_id);
+          el.$root.getUserData();
+          el.$root.getWaterData();
+          el.$root.getTodayStat();
+          el.$router.push({name: 'HomeView'});
         }
       });
     }

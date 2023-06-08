@@ -1,0 +1,135 @@
+@media screen and (max-width: 992px) {
+  .main {
+    &__content {
+      padding: 4rem 1rem 2rem 10rem;
+    }
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .stat-today {
+    &__wrapper {
+      padding-left: 2rem;
+    }
+  }
+  .main {
+    &__content {
+      padding: 4rem 2rem 2rem 2rem;
+    }
+  }
+  .register{
+    &__form {
+      max-width: 320px;
+    }
+    &__input-row {
+      flex-direction: column;
+      label {
+        margin-bottom: 1rem;
+      }
+    }
+    &__btns {
+      flex-direction: column;
+      align-items: center;
+    }
+    &__submit-btn {
+      margin-bottom: 1rem;
+    }
+  }
+  .profile {
+    width: 100%;
+    &__wrapper {
+      padding-left: 2rem;
+    }
+    &__content {
+      margin: 0;
+      flex-direction: column;
+      align-items: center;
+    }
+    &__column {
+      padding: 0;
+      margin-bottom: 1rem;
+      &:last-child {
+        border: 0;
+      }
+    }
+  }
+  .water {
+    &__wrapper {
+      padding-left: 2rem;
+    }
+  }
+
+  .calorie-burn {
+    padding-left: 2rem;
+  }
+
+  .stat {
+    padding-left: 2rem;
+    canvas {
+      width: 320px !important;
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .water {
+    .default__input-row {
+      flex-direction: column;
+      input {
+        max-width: 200px;
+      }
+      label {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+  .calorie-burn {
+    .default__input-row {
+      flex-direction: column;
+      input {
+        max-width: 200px;
+      }
+      label {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .stat-today {
+    &__title {
+      text-align: center;
+    }
+  }
+  .custom-column {
+    flex-direction: column;
+    align-items: center;
+  }
+  .profile {
+    .default__input-row {
+      flex-direction: column;
+      label {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .main {
+    &__content {
+      padding: 4rem 0.5rem 0.5rem 2rem;
+    }
+  }
+  .register {
+    &__form {
+      max-width: 235px;
+    }
+  }
+}
+
+@media screen and (max-width: 360px) {
+
+}

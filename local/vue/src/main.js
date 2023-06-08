@@ -78,6 +78,12 @@ const store = createStore({
         addBurnedCalorie(state,count) {
             state.burnedCalorie += Number(count);
         },
+        setUserLogin(state,login) {
+            state.userLogin = login;
+        },
+        setUserID(state,id) {
+            state.userId = id;
+        },
     }
 });
 
@@ -196,30 +202,35 @@ const App = {
             fetch('/api/user/get/')
                 .then(response => response.json())
                 .then(result => {
-                    this.$store.commit('setTotalCalorie', result.data.user_settings.UF_CALORIE);
-                    this.$store.commit('setTotalWaterCount', result.data.user_settings.UF_WATER);
-                    this.$store.commit('setTotalProtein', result.data.user_settings.UF_PROTEIN);
-                    this.$store.commit('setTotalFat', result.data.user_settings.UF_FAT);
-                    this.$store.commit('setTotalCarb', result.data.user_settings.UF_CARB);
+                    if (this.isAuth) {
+                        this.$store.commit('setTotalCalorie', result.data.user_settings.UF_CALORIE);
+                        this.$store.commit('setTotalWaterCount', result.data.user_settings.UF_WATER);
+                        this.$store.commit('setTotalProtein', result.data.user_settings.UF_PROTEIN);
+                        this.$store.commit('setTotalFat', result.data.user_settings.UF_FAT);
+                        this.$store.commit('setTotalCarb', result.data.user_settings.UF_CARB);
+                    }
                 });
         },
         getWaterData() {
             fetch('/api/water/get/')
                 .then(response => response.json())
                 .then(result => {
-                    this.$store.commit('addWater', result.data.SUM_WATER);
+                    if (this.isAuth) {
+                        this.$store.commit('addWater', result.data.SUM_WATER);
+                    }
                 });
         },
         getTodayStat() {
             fetch('/api/stat/today/get/')
                 .then(response => response.json())
                 .then(result => {
-                    console.log(result);
-                    this.$store.commit('addCalorie', result.data.SUM_CALORIE);
-                    this.$store.commit('addProtein', result.data.SUM_PROTEIN);
-                    this.$store.commit('addFat', result.data.SUM_FAT);
-                    this.$store.commit('addCarb', result.data.SUM_CARB);
-                    this.$store.commit('addBurnedCalorie', result.data.SUM_BURN_CALORIE);
+                    if (this.isAuth) {
+                        this.$store.commit('addCalorie', result.data.SUM_CALORIE);
+                        this.$store.commit('addProtein', result.data.SUM_PROTEIN);
+                        this.$store.commit('addFat', result.data.SUM_FAT);
+                        this.$store.commit('addCarb', result.data.SUM_CARB);
+                        this.$store.commit('addBurnedCalorie', result.data.SUM_BURN_CALORIE);
+                    }
                 });
         }
     },

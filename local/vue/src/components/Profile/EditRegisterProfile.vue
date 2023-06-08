@@ -16,7 +16,7 @@
             <label class="default-label" for="user-weight">Вес:</label>
             <input v-model.trim="weight" @keypress="isNumber" class="default-input" id="user-weight" type="text" name="weight">
           </div>
-          <div class="default__input-row">
+          <div class="default__input-row register__input-row">
             <label class="default-label" for="user-goal">Ваша цель:</label>
             <select class="default-select" id="user-goal" v-model="goal" name="goal">
               <option disabled value="">Выберите одну из целей</option>
@@ -25,7 +25,7 @@
               <option value="up">Набор массы</option>
             </select>
           </div>
-          <div class="default__input-row">
+          <div class="default__input-row register__input-row">
             <label class="default-label" for="user-activity">Тип активности:</label>
             <select class="default-select" id="user-activity" v-model="activity" name="activity">
               <option disabled value="">Выберите один из вариантов</option>
@@ -38,7 +38,7 @@
           </div>
           <h3 class="register__sub-title sub-title">Вы также можете сделать это после регистрации<span>*</span></h3>
           <div class="register__btns">
-            <div class="default-submit-btn skip-btn" @click.prevent="skip">Пропустить</div>
+            <div class="default-submit-btn register__submit-btn skip-btn" @click.prevent="skip">Пропустить</div>
             <div class="register__submit-btn default-submit-btn" @click.prevent="skip">Запомнить</div>
           </div>
         </form>
@@ -63,7 +63,7 @@
             <input required v-model.trim="password" class="default-input" id="user-pass" type="password" name="pass">
           </div>
           <div class="register__btns">
-            <div class="default-submit-btn" @click.prevent="skip">Вернуться</div>
+            <div class="default-submit-btn register__submit-btn" @click.prevent="skip">Вернуться</div>
             <button class="register__submit-btn default-submit-btn">Зарегистрироваться</button>
           </div>
         </form>

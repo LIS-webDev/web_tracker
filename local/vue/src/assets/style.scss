@@ -28,6 +28,7 @@ body {
   }
 }
 .aside {
+  z-index: 2;
   position: fixed;
   width: 210px;
   height: 100%;
@@ -253,6 +254,7 @@ body {
     display: flex;
     margin: 0 -2.5rem;
     height: 100%;
+    width: 100%;
   }
 
   &__column {
@@ -341,14 +343,17 @@ body {
     margin-bottom: 2.5rem;
   }
   &__columns {
-    display: flex;
-    margin: 0 -2rem;
   }
   &__column {
     padding: 0 2rem ;
+
   }
   .el-progress--circle {
+    z-index: 0;
     margin-bottom: 1.5rem;
+  }
+  &__nutritions {
+    padding-left: 2rem;
   }
   &__nutritions-item {
     margin-bottom: 1rem;
@@ -377,9 +382,13 @@ body {
   }
 
 }
-
+.custom-column {
+  display: flex;
+}
 .small-title {
   font-size: 18px;
   font-weight: 700;
   margin-bottom: 1rem;
 }
+
+@import 'media.scss';
